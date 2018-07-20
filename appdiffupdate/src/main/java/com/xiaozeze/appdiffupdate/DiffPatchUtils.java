@@ -17,7 +17,7 @@ public class DiffPatchUtils {
 	}
 
 	static {
-		System.loadLibrary("apk_patch_lib");
+		System.loadLibrary("xz_diff_patch");
 	}
 
 	public native int genDiff(String oldApkPath, String newApkPath, String patchPath);

@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE     := apk_patch_lib
+LOCAL_MODULE     := xz_diff_patch
 LOCAL_SRC_FILES  := bzip2/bzlib.c \
 					bzip2/crctable.c \
 					bzip2/compress.c \
