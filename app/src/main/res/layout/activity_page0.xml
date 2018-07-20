@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iconFont_1"
+        android:textSize="100sp"
+        android:textColor="#ff0000"
+        android:fontFamily="@font/xz_icon_font"/>
+    
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iconFont_2"
+        android:textSize="100sp"
+        android:textColor="#ff4081"
+        android:fontFamily="@font/xz_icon_font"/>
+
+</LinearLayout>
