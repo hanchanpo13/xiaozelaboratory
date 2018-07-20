@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">XZIconFont</string>
+    <string name="iconFont_1">&#xe603;</string>
+    <string name="iconFont_2">&#xe605;</string>
 </resources>
