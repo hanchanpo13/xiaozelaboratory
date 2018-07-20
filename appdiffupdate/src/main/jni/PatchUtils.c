@@ -1,4 +1,4 @@
-#include "cn_wjdiankong_bsdiff_PatchUtils.h"
+#include "com_xiaozeze_appdiffupdate_DiffPatchUtils.h"
 
 #include <jni.h>
 #include <sys/types.h>
@@ -9,6 +9,7 @@
 #include <err.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <common.h>
 
 
 static off_t offtin(u_char *buf)
@@ -178,9 +179,8 @@ int applypatch(int argc,char * argv[])
 	return 0;
 }
 
-JNIEXPORT jint JNICALL Java_cn_wjdiankong_bsdiff_PatchUtils_patch
-  (JNIEnv *env, jclass cls,
-			jstring old, jstring new, jstring patch){
+JNIEXPORT jint JNICALL Java_com_xiaozeze_appdiffupdate_DiffPatchUtils_patch
+  (JNIEnv *env, jclass cls,jstring old, jstring new, jstring patch){
 	int argc = 4;
 	char * argv[argc];
 	argv[0] = "bspatch";

@@ -1,4 +1,4 @@
-#include "cn_wjdiankong_bsdiff_DiffUtils.h"
+#include "com_xiaozeze_appdiffupdate_DiffPatchUtils.h"
 
 #include <sys/types.h>
 #include "bzip2/bzlib.h"
@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <common.h>
 
 #define MIN(x,y) (((x)<(y)) ? (x) : (y))
 
@@ -438,8 +439,8 @@ int genpatch(int argc, char *argv[]) {
 	return 0;
 }
 
-JNIEXPORT jint JNICALL Java_cn_wjdiankong_bsdiff_DiffUtils_genDiff(JNIEnv *env,
-		jclass cls, jstring old, jstring new, jstring patch) {
+JNIEXPORT jint JNICALL Java_com_xiaozeze_appdiffupdate_DiffPatchUtils_genDiff
+ (JNIEnv *env,jclass cls, jstring old, jstring new, jstring patch) {
 	int argc = 4;
 	char * argv[argc];
 	argv[0] = "bsdiff";
