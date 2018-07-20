@@ -1,1 +1,1 @@
-include ':app', ':xziconfont'
+include ':app', ':xziconfont', ':appdiffupdate'
