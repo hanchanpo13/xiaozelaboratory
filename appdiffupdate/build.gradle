@@ -13,11 +13,13 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        ndk {
-            moduleName "apk_patch_lib"
-            abiFilters "armeabi"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        
     }
 
     sourceSets {
