@@ -1,8 +1,11 @@
-package com.test.xiaozeze.xiaozelaboratory;
+package com.test.xiaozeze.xiaozelaboratory.domian;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+
+import com.test.xiaozeze.xiaozelaboratory.page.Page0_IconFontActivity;
+import com.test.xiaozeze.xiaozelaboratory.page.Page1_DiffUpdateActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,6 +25,7 @@ public class PageInfo {
     private static List<PageInfo> mPageList = new ArrayList<PageInfo>() {
         {
             add(new PageInfo("IconFont项目",Page0_IconFontActivity.class));
+            add(new PageInfo("增量更新项目",Page1_DiffUpdateActivity.class));
         }
     };
 

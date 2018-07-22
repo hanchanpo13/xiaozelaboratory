@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory;
+package com.test.xiaozeze.xiaozelaboratory.page;
 
 import android.app.ListActivity;
 import android.graphics.Color;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.test.xiaozeze.xiaozelaboratory.domian.PageInfo;
 
 import java.util.List;
 
