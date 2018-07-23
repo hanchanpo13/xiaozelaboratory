@@ -1,64 +1,59 @@
 package com.test.xiaozeze.xiaozelaboratory.page;
 
-import android.app.ListActivity;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.TypedValue;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.test.xiaozeze.xiaozelaboratory.R;
 import com.test.xiaozeze.xiaozelaboratory.domian.PageInfo;
+import com.test.xiaozeze.xiaozelaboratory.uiBase.BaseListAdapter;
 
-import java.util.List;
-
-public class MainActivity extends ListActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
 
-    private List<PageInfo> mPageDispatchList;
+
+    private PageListAdapter mAdapter = new PageListAdapter();
+    private ListView mPageListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPageDispatchList = PageInfo.getPageDispatchList();
-        setListAdapter(new BaseAdapter() {
-            @Override
-            public int getCount() {
-                return mPageDispatchList.size();
-            }
-
-            @Override
-            public PageInfo getItem(int position) {
-                return mPageDispatchList.get(position);
-            }
-
-            @Override
-            public long getItemId(int position) {
-                return position;
-            }
-
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                TextView textView;
-                if (convertView == null && !(convertView instanceof TextView)) {
-                    textView = new TextView(parent.getContext());
-                    textView.setTextColor(Color.BLACK);
-                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
-                }
-                textView = (TextView) convertView;
-
-                PageInfo item = getItem(position);
-                textView.setText(item.getPageName());
-                return convertView;
-            }
-        });
+        setContentView(R.layout.activity_list);
+        mPageListView = findViewById(R.id.id_page_list);
+        mPageListView.setOnItemClickListener(this);
+        mPageListView.setAdapter(mAdapter);
     }
 
     @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        PageInfo item = (PageInfo) getListAdapter().getItem(position);
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        PageInfo item = mAdapter.getItem(position);
         item.startActivity(this);
+    }
+
+    private class PageListAdapter extends BaseListAdapter<PageInfo> {
+
+        private TextView mTv;
+
+        public PageListAdapter() {
+            reFreshData(false, PageInfo.getPageDispatchList());
+        }
+
+        @Override
+        public View createItem(ViewGroup parent) {
+            LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+            View rootView = layoutInflater.inflate(R.layout.item_tv, parent, false);
+            mTv = rootView.findViewById(R.id.tv_list_item);
+            return rootView;
+        }
+
+        @Override
+        public void bindData(PageInfo data) {
+            mTv.setText(data.getPageName());
+        }
     }
 }

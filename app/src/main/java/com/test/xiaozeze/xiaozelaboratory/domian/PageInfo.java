@@ -9,6 +9,7 @@ import com.test.xiaozeze.xiaozelaboratory.page.Page1_DiffUpdateActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -39,10 +40,11 @@ public class PageInfo {
     
     private Class<? extends Activity> mActivityClass;
     private String mPageName;
-    private Map<String, Serializable> mParams;
+    private Map<String, Serializable> mParams = new HashMap<>();
 
-    public PageInfo(String mPageName,Class<? extends Activity> activityClass) {
+    public PageInfo(String pageName, Class<? extends Activity> activityClass) {
         mActivityClass = activityClass;
+        mPageName = pageName;
     }
 
     public PageInfo addParams(String key, Serializable value) {
