@@ -1,0 +1,9 @@
+<resources>
+
+    <declare-styleable name="XZIconFontView">
+        <attr name="iconCode" format="string" localization="suggested"/>
+        <attr name="iconColor" format="reference|color"/>
+        <attr name="iconSize" format="dimension"/>
+    </declare-styleable>
+    
+</resources>
