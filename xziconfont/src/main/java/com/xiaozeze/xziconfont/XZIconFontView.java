@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -37,7 +38,7 @@ public class XZIconFontView extends FrameLayout {
 
         // 设置属性
         TextView tv = findViewById(R.id.fontViewContent);
-        tv.setTextSize(size);
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
         if (colorStateList != null) {
             tv.setTextColor(colorStateList);
         }
@@ -45,8 +46,8 @@ public class XZIconFontView extends FrameLayout {
     }
 
 
-    float dp2px(int dp) {
+    int dp2px(int dp) {
         final float scale = getResources().getDisplayMetrics().density;
-        return dp * scale + 0.5f;
+        return (int) (dp * scale + 0.5f);
     }
 }
