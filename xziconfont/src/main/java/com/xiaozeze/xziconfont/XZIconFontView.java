@@ -28,7 +28,7 @@ public class XZIconFontView extends FrameLayout {
     }
 
     public XZIconFontView(Context context, AttributeSet attrs) {
-        this(context, attrs, -1);
+        this(context, attrs, 0);
     }
 
     public XZIconFontView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -45,13 +45,11 @@ public class XZIconFontView extends FrameLayout {
         // 设置属性
         mTv = findViewById(R.id.fontViewContent);
         mTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
-        if (colorStateList != null) {
-            mTv.setTextColor(colorStateList);
-        }
-        mTv.setText(iconCode);
+        setIconColor(colorStateList);
+        setIcon(iconCode);
     }
     
-    public void setIcon(String iconCode){
+    public void setIcon(CharSequence iconCode){
         mTv.setText(iconCode);
     }
     
@@ -62,12 +60,16 @@ public class XZIconFontView extends FrameLayout {
     public void setIconColor(@ColorRes int iconResId){
         mTv.setTextColor(ContextCompat.getColor(getContext(),iconResId));
     }
-
-
+    
     public void setIconColorInt(@ColorInt int iconResId){
         mTv.setTextColor(iconResId);
     }
-    
+
+    public void setIconColor(ColorStateList colorStateList) {
+        if (colorStateList != null) {
+            mTv.setTextColor(colorStateList);
+        }
+    }
 
     public void setIconSize(int size_dp){
         mTv.setTextSize(TypedValue.COMPLEX_UNIT_PX,dp2px(size_dp));
