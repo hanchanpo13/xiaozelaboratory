@@ -52,7 +52,7 @@ public class TranslateUtil {
             int statusCode = urlConn.getResponseCode();
             if (statusCode == 200) {
                 // 获取返回的数据
-                googleResult = streamToString(urlConn.getInputStream());
+                googleResult = Utils.getStringFromInputStream(urlConn.getInputStream());
             }
             // 关闭连接
             urlConn.disconnect();
@@ -70,29 +70,6 @@ public class TranslateUtil {
         return result;
     }
 
-
-    /**
-     * 将输入流转换成字符串
-     *
-     * @param is 从网络获取的输入流
-     * @return 字符串
-     */
-    public static String streamToString(InputStream is) {
-        try {
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            byte[] buffer = new byte[1024];
-            int len = 0;
-            while ((len = is.read(buffer)) != -1) {
-                out.write(buffer, 0, len);
-            }
-            out.close();
-            is.close();
-            byte[] byteArray = out.toByteArray();
-            return new String(byteArray);
-        } catch (Exception e) {
-            return null;
-        }
-    }
 
 
     private static String getTranslateUrl(String sourceLan, String targetLan, String content) {

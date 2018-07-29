@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridView;
 
 import com.test.xiaozeze.xiaozelaboratory.R;
 import com.test.xiaozeze.xiaozelaboratory.uiBase.XZBaseListAdapter;
+import com.test.xiaozeze.xiaozelaboratory.utils.ShareUtils;
+import com.test.xiaozeze.xiaozelaboratory.utils.TranslateUtil;
 import com.test.xiaozeze.xiaozelaboratory.utils.Utils;
 import com.xiaozeze.xziconfont.XZIconFontView;
 
@@ -29,6 +32,7 @@ import java.util.Set;
 public class Page0_IconFontActivity extends AppCompatActivity {
 
     private GridView mFontList;
+    private Button btn_share;
     private FontAdapter mAdapter;
 
     @Override
@@ -36,13 +40,20 @@ public class Page0_IconFontActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page0);
         mFontList = findViewById(R.id.icon_font_list);
+        btn_share = findViewById(R.id.btn_share);
         mAdapter = new FontAdapter(this);
         mFontList.setAdapter(mAdapter);
+        btn_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ShareUtils.sendFileByOtherApp(Page0_IconFontActivity.this, "");
+            }
+        });
         new ParseHTMLTask().execute("demo_unicode.html");
     }
 
 
-    class FontAdapter extends XZBaseListAdapter<String> {
+    class FontAdapter extends XZBaseListAdapter<IconFontInfo> {
 
         public FontAdapter(Context context) {
             super(context);
@@ -62,8 +73,8 @@ public class Page0_IconFontActivity extends AppCompatActivity {
 
                 @Override
                 public void setItemData(int pos) {
-                    String item = getItem(pos);
-                    mFontView.setIcon(item);
+                    IconFontInfo item = getItem(pos);
+                    mFontView.setIcon(item.code4Show);
                 }
             };
             return viewHolder;
@@ -75,65 +86,95 @@ public class Page0_IconFontActivity extends AppCompatActivity {
     /**
      * 解析HTML
      */
-    private class ParseHTMLTask extends AsyncTask<String, Void, List<String>> {
+    private class ParseHTMLTask extends AsyncTask<String, Void, List<IconFontInfo>> {
         @Override
-        protected List<String> doInBackground(final String... path) {
-            List<String> data = new ArrayList<>();
+        protected void onPreExecute() {
+            IconFontInfo.clear();
+        }
+
+        @Override
+        protected List<IconFontInfo> doInBackground(final String... path) {
             try {
                 InputStream open = getResources().getAssets().open(path[0]);
                 String html = Utils.getStringFromInputStream(open);
                 Document doc = Jsoup.parse(html);
                 Elements tag_li_list = doc.select("div.main").get(0).getElementsByTag("li");
                 for (Element element : tag_li_list) {
-                    String code4Show = element.child(0).text();
-                    String name = element.child(1).text();
-                    String code4XML = element.child(2).text();
-                    
-                    // 
-                    data.add(code4Show);
+                    String[] allName = element.child(1).text().split("_");
+                    if (allName.length == 2) {
+                        String code4Show = element.child(0).text();
+                        String code4XML = element.child(2).text();
+                        IconFontInfo.add(allName[0], allName[1], code4Show, code4XML);
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return data;
+            return IconFontInfo.getList();
         }
 
         @Override
-        protected void onPostExecute(List<String> data) {
+        protected void onPostExecute(List<IconFontInfo> data) {
             if (data != null && !data.isEmpty()) {
                 mAdapter.refreshList(false, data);
+                new TranslateTask().execute();
             }
         }
     }
 
-    class IconFontProJect {
+    /**
+     * 翻译
+     */
+    private class TranslateTask extends AsyncTask<Void, Void, Boolean> {
 
-        Map<String, List<IconFontInfo>> types = new HashMap<>();
+        @Override
+        protected Boolean doInBackground(Void... voids) {
 
-        class IconFontInfo {
-            String type;
-            String code4Show;
-            String name;
-            String code4XML;
+            if (!IconFontInfo.types.isEmpty()) {
+                StringBuilder sb = new StringBuilder();
+                Set<Map.Entry<String, List<IconFontInfo>>> entries = IconFontInfo.types.entrySet();
+                for (Map.Entry<String, List<IconFontInfo>> entry : entries) {
+//                    String type = TranslateUtil.translate("zh", "en", entry.getKey());
+                    String type = entry.getKey();
+                    List<IconFontInfo> fontInfos = entry.getValue();
+                    for (IconFontInfo fontInfo : fontInfos) {
+                        String allName4XML = TranslateUtil.translate("zh", "en", fontInfo.name);
+                        sb.append(String.format("<string name=\"%s_%s\">%s</string>", type, allName4XML, fontInfo.code4XML)).append("\n");
+                    }
+                }
 
-            public IconFontInfo(String type, String code4Show, String name, String code4XML) {
-                this.type = type;
-                this.code4Show = code4Show;
-                this.name = name;
-                this.code4XML = code4XML;
+                if (sb.length() > 0) {
+                    //  TODO 将sb写入文件  
+                    return true;
+                }
             }
+            return false;
         }
 
-        void add(String type,String code4Show, String name, String code4XML) {
+        @Override
+        protected void onPostExecute(Boolean isOK) {
+            if (isOK) {
+                btn_share.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+
+    // 数据处理
+    static class IconFontInfo {
+
+        static Map<String, List<IconFontInfo>> types = new HashMap<>();
+
+        static void add(String type, String name, String code4Show, String code4XML) {
             IconFontInfo info = new IconFontInfo(type, code4Show, name, code4XML);
-            if(!types.containsKey(type)){
+            if (!types.containsKey(type)) {
                 types.put(type, new ArrayList<IconFontInfo>());
             }
             List<IconFontInfo> iconFontInfos = types.get(type);
             iconFontInfos.add(info);
         }
 
-        List<IconFontInfo> getList() {
+        static List<IconFontInfo> getList() {
             List<IconFontInfo> list = new ArrayList<>();
             Set<Map.Entry<String, List<IconFontInfo>>> entries = types.entrySet();
             for (Map.Entry<String, List<IconFontInfo>> entry : entries) {
@@ -141,6 +182,24 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                 list.addAll(infoList);
             }
             return list;
+        }
+
+        public static void clear() {
+            types.clear();
+        }
+
+//        _________________________________________________________________________
+
+        String type;
+        String name;
+        String code4Show;
+        String code4XML;
+
+        public IconFontInfo(String type, String name, String code4Show, String code4XML) {
+            this.type = type;
+            this.name = name;
+            this.code4Show = code4Show;
+            this.code4XML = code4XML;
         }
     }
 }

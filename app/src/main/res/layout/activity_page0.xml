@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btn_share"
+        android:visibility="gone"
+        android:text="发送配置文件"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <com.xiaozeze.xziconfont.XZIconFontView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:iconCode="@string/iconFont_3"
-            app:iconColor="#ff4081"
-            app:iconSize="100sp"/>
-
-        <com.xiaozeze.xziconfont.XZIconFontView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:iconCode="@string/iconFont_2"
-            app:iconColor="#ffff00"
-            app:iconSize="100sp"/>
-
-    </LinearLayout>
+        android:layout_height="wrap_content"/>
 
     <GridView
         android:id="@+id/icon_font_list"
