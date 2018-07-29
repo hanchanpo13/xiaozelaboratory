@@ -3,6 +3,10 @@ package com.xiaozeze.xziconfont;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.annotation.StringRes;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -16,6 +20,8 @@ import android.widget.TextView;
  * Version: 1.0
  */
 public class XZIconFontView extends FrameLayout {
+
+    private TextView mTv;
 
     public XZIconFontView(Context context) {
         this(context, null);
@@ -37,12 +43,34 @@ public class XZIconFontView extends FrameLayout {
         ta.recycle();
 
         // 设置属性
-        TextView tv = findViewById(R.id.fontViewContent);
-        tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
+        mTv = findViewById(R.id.fontViewContent);
+        mTv.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
         if (colorStateList != null) {
-            tv.setTextColor(colorStateList);
+            mTv.setTextColor(colorStateList);
         }
-        tv.setText(iconCode);
+        mTv.setText(iconCode);
+    }
+    
+    public void setIcon(String iconCode){
+        mTv.setText(iconCode);
+    }
+    
+    public void setIcon(@StringRes int iconResId){
+        mTv.setText(iconResId);
+    }
+
+    public void setIconColor(@ColorRes int iconResId){
+        mTv.setTextColor(ContextCompat.getColor(getContext(),iconResId));
+    }
+
+
+    public void setIconColorInt(@ColorInt int iconResId){
+        mTv.setTextColor(iconResId);
+    }
+    
+
+    public void setIconSize(int size_dp){
+        mTv.setTextSize(TypedValue.COMPLEX_UNIT_PX,dp2px(size_dp));
     }
 
 
