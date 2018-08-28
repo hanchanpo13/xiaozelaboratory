@@ -1,8 +1,8 @@
 package com.test.xiaozeze.xiaozelaboratory.page;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -11,14 +11,12 @@ import android.widget.TextView;
 
 import com.test.xiaozeze.xiaozelaboratory.R;
 import com.test.xiaozeze.xiaozelaboratory.domian.PageInfo;
-import com.test.xiaozeze.xiaozelaboratory.uiBase.BaseListAdapter;
+import com.test.xiaozeze.xiaozelaboratory.uiBase.XZBaseListAdapter;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-
-
-    private PageListAdapter mAdapter = new PageListAdapter();
     private ListView mPageListView;
+    private PageListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_list);
         mPageListView = findViewById(R.id.id_page_list);
         mPageListView.setOnItemClickListener(this);
+        mAdapter = new PageListAdapter(this);
         mPageListView.setAdapter(mAdapter);
     }
 
@@ -35,25 +34,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         item.startActivity(this);
     }
 
-    private class PageListAdapter extends BaseListAdapter<PageInfo> {
+    private class PageListAdapter extends XZBaseListAdapter<PageInfo> {
 
-        private TextView mTv;
 
-        public PageListAdapter() {
-            reFreshData(false, PageInfo.getPageDispatchList());
+        public PageListAdapter(Context cx) {
+            super(cx);
+            refreshList(false, PageInfo.getPageDispatchList());
         }
 
-        @Override
-        public View createItem(ViewGroup parent) {
-            LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-            View rootView = layoutInflater.inflate(R.layout.item_tv, parent, false);
-            mTv = rootView.findViewById(R.id.tv_list_item);
-            return rootView;
-        }
 
         @Override
-        public void bindData(PageInfo data) {
-            mTv.setText(data.getPageName());
+        protected XZBaseListViewHolder getHolder(int pos, ViewGroup parent) {
+            return new XZBaseListViewHolder(R.layout.item_tv, parent) {
+                private TextView mTv;
+
+                @Override
+                protected void initView(View convertView) {
+                    mTv = convertView.findViewById(R.id.tv_list_item);
+                }
+
+                @Override
+                public void setItemData(int pos) {
+                    PageInfo item = getItem(pos);
+                    mTv.setText(item.getPageName());
+                }
+            };
         }
     }
 }

@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">XZIconFont</string>
-    <string name="iconFont_1">&#xe6f3;</string>
-    <string name="iconFont_2">&#xe6f4;</string>
-    <string name="iconFont_3">&#xe6f5;</string>
-    <string name="iconFont_4">&#xe6f6;</string>
-    <string name="iconFont_5">&#xe6f7;</string>
-    <string name="iconFont_6">&#xe6f8;</string>
+    <!-- iconf_common -->
+    <string name="iconf_common_arrowTriangle">&#xe6e8;</string>
+    <string name="iconf_common_turnOffLinearity">&#xe6e9;</string>
+    <string name="iconf_common_closeTheRing">&#xe6ea;</string>
+    <string name="iconf_common_arrowRound">&#xe6eb;</string>
+    <string name="iconf_common_closeTheCircle">&#xe6ec;</string>
+    <string name="iconf_common_arrowLinear">&#xe6ed;</string>
 </resources>

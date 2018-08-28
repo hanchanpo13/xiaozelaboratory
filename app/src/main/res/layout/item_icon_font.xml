@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
+
+    <com.xiaozeze.xziconfont.XZIconFontView
+        android:id="@+id/icon_font_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:iconColor="@android:color/black"
+        app:size="50dp"/>
+
+    <TextView
+        android:id="@+id/icon_font_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/icon_font_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:textColor="@android:color/black"/>
+
+</LinearLayout>

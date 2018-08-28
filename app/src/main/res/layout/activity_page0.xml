@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <Button
@@ -12,7 +13,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <com.xiaozeze.xziconfont.XZIconFontView
+        android:id="@+id/icon_font_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:iconColor="@android:color/black"
+        app:iconText="小泽泽摸摸哒"
+        app:iconTextStyle="bold"
+        app:iconCode="@string/iconf_common_arrowTriangle"
+        app:size="12dp"/>
+    
     <GridView
+        android:layout_marginTop="20dp"
         android:id="@+id/icon_font_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

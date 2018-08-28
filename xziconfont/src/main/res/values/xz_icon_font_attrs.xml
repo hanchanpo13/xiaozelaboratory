@@ -1,9 +1,26 @@
 <resources>
 
     <declare-styleable name="XZIconFontView">
+        <!--颜色选择器-->
+        <attr name="defaultColor" format="reference|color"/>
+        <attr name="size" format="dimension"/>
+
+        <!--icon属性-->
         <attr name="iconCode" format="string" localization="suggested"/>
         <attr name="iconColor" format="reference|color"/>
-        <attr name="iconSize" format="dimension"/>
+        <attr name="iconBold">
+            <flag name="no" value="0"/>
+            <flag name="yes" value="1"/>
+        </attr>
+        <!--文字属性-->
+        <attr name="iconTextColor" format="reference|color"/>
+        <attr name="iconText" format="string"/>
+        <attr name="iconTextStyle">
+            <flag name="normal" value="0"/>
+            <flag name="bold" value="1"/>
+            <flag name="italic" value="2"/>
+            <flag name="bold_italic" value="3"/>
+        </attr>
     </declare-styleable>
-    
+
 </resources>
