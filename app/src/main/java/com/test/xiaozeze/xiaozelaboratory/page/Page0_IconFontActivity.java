@@ -74,7 +74,8 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                 .append(icon).setTextSize(13)
                 .create();
 //        mFontView.setIconContent(spannableInfo);
-        mFontView.setIconContent("了解更多",icon);
+        mFontView.setIcon(spannableInfo);
+        
         mFontView.setOnClickListener(new View.OnClickListener() {
             boolean isVisib;
 
@@ -110,7 +111,7 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                 @Override
                 public void setItemData(int pos) {
                     IconFontInfo item = getItem(pos);
-                    iconFontView.setIconContent(null,item.code4Show);
+                    iconFontView.setIcon(item.code4Show);
                     iconFontCode.setText(item.code4XML);
                     iconFontDesc.setText(String.format("%s\n%s", item.type, item.name));
                 }

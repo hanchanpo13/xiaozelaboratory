@@ -17,11 +17,8 @@
         android:id="@+id/icon_font_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:iconColor="@android:color/black"
-        app:iconText="小泽泽摸摸哒"
-        app:iconTextStyle="bold"
         app:iconCode="@string/iconf_common_arrowTriangle"
-        app:size="12dp"/>
+        app:iconSize="12dp"/>
     
     <GridView
         android:layout_marginTop="20dp"

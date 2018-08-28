@@ -3,24 +3,64 @@
     <declare-styleable name="XZIconFontView">
         <!--颜色选择器-->
         <attr name="defaultColor" format="reference|color"/>
-        <attr name="size" format="dimension"/>
-
         <!--icon属性-->
         <attr name="iconCode" format="string" localization="suggested"/>
         <attr name="iconColor" format="reference|color"/>
+        <attr name="iconSize" format="dimension"/>
         <attr name="iconBold">
             <flag name="no" value="0"/>
             <flag name="yes" value="1"/>
         </attr>
+        <attr name="textLeftPadding" format="dimension"/>
+        <attr name="textTopPadding" format="dimension"/>
+        <attr name="textRightPadding" format="dimension"/>
+        <attr name="textBottomPadding" format="dimension"/>
+
         <!--文字属性-->
-        <attr name="iconTextColor" format="reference|color"/>
-        <attr name="iconText" format="string"/>
-        <attr name="iconTextStyle">
+        <!--左文字属性-->
+        <attr name="font_leftText" format="string"/>
+        <attr name="font_leftTextColor" format="reference|color"/>
+        <attr name="font_leftTextSize" format="dimension"/>
+        <attr name="font_leftTextStyle">
+            <flag name="normal" value="0"/>
+            <flag name="bold" value="1"/>
+            <flag name="italic" value="2"/>
+            <flag name="bold_italic" value="3"/>
+        </attr>
+
+        <!--上文字属性-->
+        <attr name="font_topText" format="string"/>
+        <attr name="font_topTextColor" format="reference|color"/>
+        <attr name="font_topTextSize" format="dimension"/>
+        <attr name="font_topTextStyle">
+            <flag name="normal" value="0"/>
+            <flag name="bold" value="1"/>
+            <flag name="italic" value="2"/>
+            <flag name="bold_italic" value="3"/>
+        </attr>
+
+        <!--右文字属性-->
+        <attr name="font_rightText" format="string"/>
+        <attr name="font_rightTextColor" format="reference|color"/>
+        <attr name="font_rightTextSize" format="dimension"/>
+        <attr name="font_rightTextStyle">
+            <flag name="normal" value="0"/>
+            <flag name="bold" value="1"/>
+            <flag name="italic" value="2"/>
+            <flag name="bold_italic" value="3"/>
+        </attr>
+        <!--下文字属性-->
+        <attr name="font_bottomText" format="string"/>
+        <attr name="font_bottomTextColor" format="reference|color"/>
+        <attr name="font_bottomTextSize" format="dimension"/>
+        <attr name="font_bottomTextStyle">
             <flag name="normal" value="0"/>
             <flag name="bold" value="1"/>
             <flag name="italic" value="2"/>
             <flag name="bold_italic" value="3"/>
         </attr>
     </declare-styleable>
+
+    <item name="icon_view_id" type="id" />
 
 </resources>

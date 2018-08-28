@@ -12,8 +12,7 @@
         android:id="@+id/icon_font_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:iconColor="@android:color/black"
-        app:size="50dp"/>
+        app:iconColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/icon_font_code"
