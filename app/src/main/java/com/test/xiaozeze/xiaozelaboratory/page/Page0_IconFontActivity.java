@@ -1,15 +1,12 @@
 package com.test.xiaozeze.xiaozelaboratory.page;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
 import android.text.TextUtils;
-import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,9 +70,10 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                 .append("了解更多 ")
                 .append(icon).setTextSize(13)
                 .create();
-//        mFontView.setIconContent(spannableInfo);
         mFontView.setIcon(spannableInfo);
-        
+        XZIconFontView.TextBound textBound = mFontView.getTextBound();
+        textBound.setText("");
+        mFontView.setTextThem(textBound);
         mFontView.setOnClickListener(new View.OnClickListener() {
             boolean isVisib;
 

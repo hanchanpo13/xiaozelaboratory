@@ -1,31 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <Button
         android:id="@+id/btn_share"
-        android:visibility="gone"
-        android:text="发送配置文件"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="发送配置文件"
+        android:visibility="gone"/>
 
     <com.xiaozeze.xziconfont.XZIconFontView
         android:id="@+id/icon_font_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:text_Orientation="left"
+        app:font_Text="小泽泽"
         app:iconCode="@string/iconf_common_arrowTriangle"
         app:iconSize="12dp"/>
-    
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.xiaozeze.xziconfont.XZIconFontView
+            android:id="@+id/icon_font_view1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:text_Orientation="top"
+            app:font_Text="小泽泽"
+            app:icon_rotation="rotation_90"
+            app:iconCode="@string/iconf_common_arrowTriangle"
+            app:iconSize="12dp"/>
+
+
+        <com.xiaozeze.xziconfont.XZIconFontView
+            android:id="@+id/icon_font_view2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon_font_view1"
+            app:icon_rotation="rotation_180"
+            app:text_Orientation="right"
+            app:font_Text="小泽泽"
+            app:iconCode="@string/iconf_common_arrowTriangle"
+            app:iconSize="40dp"/>
+
+        <com.xiaozeze.xziconfont.XZIconFontView
+            android:id="@+id/icon_font_view3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icon_font_view2"
+            app:text_Orientation="bottom"
+            app:icon_rotation="rotation_-90"
+            app:font_Text="小泽泽"
+            app:iconCode="@string/iconf_common_arrowTriangle"
+            app:iconSize="14dp"/>
+    </RelativeLayout>
+
     <GridView
-        android:layout_marginTop="20dp"
         android:id="@+id/icon_font_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
         android:numColumns="3"/>
-
 
 </LinearLayout>
