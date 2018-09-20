@@ -1,17 +1,15 @@
 package com.test.xiaozeze.xiaozelaboratory.utils;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 
 public class TranslateUtil {
-    public static final String TRANSLATE_BASE_URL = "https://translate.google.cn/"; // 不需要翻墙即可使用
-    //    public static final String TRANSLATE_SINGLE_URL = "https://translate.google.cn/translate_a/single?client=gtx&sl=en&tl=zh&dt=t&q=Do%20not%20work%20overtime%20tonight";
-    public static final String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36";
+
+    private static final String APP_ID = "20180920000209994";
+    private static final String xx = "xhj_uNauf_reiFNw8cj6";
 
     /**
      * 翻译，包含http请求，需要异步，返回""则为翻译失败
@@ -29,7 +27,7 @@ public class TranslateUtil {
         try {
             String googleResult = "";
             // 新建一个URL对象
-            URL url = new URL(getTranslateUrl(sourceLan, targetLan, content));
+            URL url = new URL(getTranslateUrl(content,sourceLan, targetLan));
             // 打开一个HttpURLConnection连接
             HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
             // 设置连接主机超时时间
@@ -41,7 +39,7 @@ public class TranslateUtil {
             // 设置为Post请求
             urlConn.setRequestMethod("GET");
             //urlConn设置请求头信息
-            urlConn.setRequestProperty("User-Agent", USER_AGENT);
+//            urlConn.setRequestProperty("User-Agent", USER_AGENT);
             //设置请求中的媒体类型信息。
 //            urlConn.setRequestProperty("Content-Type", "application/json");
             //设置客户端与服务连接类型
@@ -58,9 +56,10 @@ public class TranslateUtil {
             urlConn.disconnect();
 
             // 处理返回结果，拼接
-            JSONArray jsonArray = new JSONArray(googleResult).getJSONArray(0);
+            JSONObject jsonObject = new JSONObject(googleResult);
+            JSONArray jsonArray = jsonObject.getJSONArray("trans_result");
             for (int i = 0; i < jsonArray.length(); i++) {
-                result += jsonArray.getJSONArray(i).getString(0);
+                result += jsonArray.getJSONObject(i).getString("dst");
             }
         } catch (Exception e) {
 //            result = "翻译失败";
@@ -71,12 +70,27 @@ public class TranslateUtil {
     }
 
 
+    /**
+     * 获取请求
+     * @param content
+     * @param from
+     * @param to
+     * @return
+     */
+    private static String getTranslateUrl(String content, String from, String to) {
+        String salt = System.currentTimeMillis() + "";
+        return String.format("http://api.fanyi.baidu.com/api/trans/vip/translate?q=%s&from=%s&to=%s&appid=%s&salt=%s&sign=%s",
+                EncodeUtils.urlEncode(content, "UTF-8"), from, to, APP_ID, salt, getSign(content,salt));
+    }
 
-    private static String getTranslateUrl(String sourceLan, String targetLan, String content) {
-        try {
-            return TRANSLATE_BASE_URL + "translate_a/single?client=gtx&sl=" + sourceLan + "&tl=" + targetLan + "&dt=t&q=" + URLEncoder.encode(content, "UTF-8");
-        } catch (Exception e) {
-            return TRANSLATE_BASE_URL + "translate_a/single?client=gtx&sl=" + sourceLan + "&tl=" + targetLan + "&dt=t&q=" + content;
-        }
+    /**
+     * 获取验签
+     * @param content
+     * @return
+     */
+    private static String getSign(String content,String salt) {
+        String str = APP_ID + content + salt + xx;
+        return EncryptUtils.encryptMD5ToString(str).toLowerCase();
+
     }
 }

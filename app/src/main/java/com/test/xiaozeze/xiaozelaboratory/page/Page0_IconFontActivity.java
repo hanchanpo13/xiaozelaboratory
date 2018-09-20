@@ -1,5 +1,7 @@
 package com.test.xiaozeze.xiaozelaboratory.page;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -29,12 +31,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class Page0_IconFontActivity extends AppCompatActivity {
+
+    private String xmlStr;
 
     private GridView mFontList;
     private Button btn_share;
@@ -54,6 +57,13 @@ public class Page0_IconFontActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ShareUtils.sendFileByOtherApp(Page0_IconFontActivity.this, "");
+                //获取剪贴板管理器：
+                ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                // 创建普通字符型ClipData
+                ClipData mClipData = ClipData.newPlainText("Label", xmlStr);
+                // 将ClipData内容放到系统剪贴板里。
+                cm.setPrimaryClip(mClipData);
+
             }
         });
         testIconFontMix();
@@ -63,7 +73,7 @@ public class Page0_IconFontActivity extends AppCompatActivity {
     private void testIconFontMix() {
         String icon = getResources().getString(R.string.iconf_common_arrowTriangle);
         //速订是一种更高效的预订方式：房客下单付款后即完成预订，不再需要您的确认。了解更多
-        SpannableStringBuilder spannableInfo= SpannableStringUtils
+        SpannableStringBuilder spannableInfo = SpannableStringUtils
                 .getBuilder("速订").setBold()
                 .append("是一种更高效的预订方式：房客下单付款后即完成预订，")
                 .append("不再需要您的确认。").setForegroundColor(Color.RED).setBold()
@@ -164,8 +174,6 @@ public class Page0_IconFontActivity extends AppCompatActivity {
      */
     private class TranslateTask extends AsyncTask<Void, Void, Boolean> {
 
-        List<IconFontInfo> eroList = new ArrayList<>();
-
         @Override
         protected Boolean doInBackground(Void... voids) {
 
@@ -181,7 +189,7 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                             String allName4XML = TranslateUtil.translate("zh", "en", fontInfo.name);
                             if (!TextUtils.isEmpty(allName4XML)) {
                                 allName4XML = getHumpText(allName4XML);
-                                sb.append(String.format("<string name=\"%s_%s\">%s</string>", type, allName4XML, fontInfo.code4XML)).append("\n");
+                                sb.append(String.format("<string name=\"%s_%s\">%s</string>\t<!-- %s -->", type, allName4XML, fontInfo.code4XML,fontInfo.name)).append("\n");
                             } else {
                                 Log.i("javen", fontInfo.name + "翻译失败");
                             }
@@ -192,11 +200,11 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                 }
 
                 if (sb.length() > 0) {
-                    //  TODO 将sb写入文件  
+                    xmlStr = sb.toString();
                     return true;
                 }
             }
-            return false;
+            return true;
         }
 
         @Override
@@ -218,7 +226,7 @@ public class Page0_IconFontActivity extends AppCompatActivity {
             for (String s : split) {
                 if (!Character.isUpperCase(s.charAt(0))) {
                     s = new StringBuilder().append(Character.toUpperCase(s.charAt(0))).append(s.substring(1)).toString();
-                }else {
+                } else {
                     s = new StringBuilder().append(Character.toLowerCase(s.charAt(0))).append(s.substring(1)).toString();
                 }
                 sb.append(s);
