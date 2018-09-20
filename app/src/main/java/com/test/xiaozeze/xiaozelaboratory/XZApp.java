@@ -2,6 +2,8 @@ package com.test.xiaozeze.xiaozelaboratory;
 
 import android.app.Application;
 
+import com.test.xiaozeze.xiaozelaboratory.utils.Utils;
+
 /**
  * Description:
  * Author: fengzeyuan
@@ -19,5 +21,6 @@ public class XZApp extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+        Utils.init(this);
     }
 }

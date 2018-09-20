@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.test.xiaozeze.xiaozelaboratory.page.Page0_IconFontActivity;
 import com.test.xiaozeze.xiaozelaboratory.page.Page1_DiffUpdateActivity;
+import com.test.xiaozeze.xiaozelaboratory.page.Page2_DynamicIconActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,11 +23,12 @@ import java.util.Set;
  */
 public class PageInfo {
 
-// --------------------- 页面信息注册 ------------------
+    // --------------------- 页面信息注册 ------------------
     private static List<PageInfo> mPageList = new ArrayList<PageInfo>() {
         {
-            add(new PageInfo("IconFont项目",Page0_IconFontActivity.class));
-            add(new PageInfo("增量更新项目",Page1_DiffUpdateActivity.class));
+            add(new PageInfo("IconFont项目", Page0_IconFontActivity.class));
+            add(new PageInfo("增量更新项目", Page1_DiffUpdateActivity.class));
+            add(new PageInfo("动态Icon项项目", Page2_DynamicIconActivity.class));
         }
     };
 
