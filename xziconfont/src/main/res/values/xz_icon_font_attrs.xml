@@ -11,56 +11,34 @@
             <flag name="no" value="0"/>
             <flag name="yes" value="1"/>
         </attr>
-        <attr name="textLeftPadding" format="dimension"/>
-        <attr name="textTopPadding" format="dimension"/>
-        <attr name="textRightPadding" format="dimension"/>
-        <attr name="textBottomPadding" format="dimension"/>
+        <attr name="textPadding" format="dimension"/>
 
         <!--文字属性-->
-        <!--左文字属性-->
-        <attr name="font_leftText" format="string"/>
-        <attr name="font_leftTextColor" format="reference|color"/>
-        <attr name="font_leftTextSize" format="dimension"/>
-        <attr name="font_leftTextStyle">
+        <attr name="font_Text" format="string"/>
+        <attr name="font_TextColor" format="reference|color"/>
+        <attr name="font_TextSize" format="dimension"/>
+        <attr name="font_TextStyle">
             <flag name="normal" value="0"/>
             <flag name="bold" value="1"/>
             <flag name="italic" value="2"/>
             <flag name="bold_italic" value="3"/>
         </attr>
-
-        <!--上文字属性-->
-        <attr name="font_topText" format="string"/>
-        <attr name="font_topTextColor" format="reference|color"/>
-        <attr name="font_topTextSize" format="dimension"/>
-        <attr name="font_topTextStyle">
-            <flag name="normal" value="0"/>
-            <flag name="bold" value="1"/>
-            <flag name="italic" value="2"/>
-            <flag name="bold_italic" value="3"/>
+        
+        <attr name="text_Orientation">
+            <flag name="left" value="0"/>
+            <flag name="top" value="1"/>
+            <flag name="right" value="2"/>
+            <flag name="bottom" value="3"/>
         </attr>
-
-        <!--右文字属性-->
-        <attr name="font_rightText" format="string"/>
-        <attr name="font_rightTextColor" format="reference|color"/>
-        <attr name="font_rightTextSize" format="dimension"/>
-        <attr name="font_rightTextStyle">
-            <flag name="normal" value="0"/>
-            <flag name="bold" value="1"/>
-            <flag name="italic" value="2"/>
-            <flag name="bold_italic" value="3"/>
-        </attr>
-        <!--下文字属性-->
-        <attr name="font_bottomText" format="string"/>
-        <attr name="font_bottomTextColor" format="reference|color"/>
-        <attr name="font_bottomTextSize" format="dimension"/>
-        <attr name="font_bottomTextStyle">
-            <flag name="normal" value="0"/>
-            <flag name="bold" value="1"/>
-            <flag name="italic" value="2"/>
-            <flag name="bold_italic" value="3"/>
+        
+        <attr name="icon_rotation">
+            <flag name="rotation_0" value="0"/>
+            <flag name="rotation_90" value="90"/>
+            <flag name="rotation_180" value="180"/>
+            <flag name="rotation_-90" value="270"/>
         </attr>
     </declare-styleable>
 
-    <item name="icon_view_id" type="id" />
+    <item name="tv_id" type="id" />
 
 </resources>
