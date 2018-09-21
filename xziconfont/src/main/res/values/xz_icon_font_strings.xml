@@ -28,7 +28,7 @@
     <string name="iconf_facility_wiredNetwork">&#xe705;</string>  <!-- 有线网络 -->
     <string name="iconf_facility_bathtub">&#xe706;</string>  <!-- 浴缸 -->
     <string name="iconf_facility_cook">&#xe708;</string>  <!-- 做饭 -->
-    <string name="iconf_facility_shampoo">&#xe70b;</string>  <!-- 浴液洗发水 -->
+    <string name="iconf_facility_bathShampoo">&#xe70b;</string>  <!-- 浴液洗发水 -->
 
     <!-- iconf_common -->
     <string name="iconf_common_arrowheadTriangle">&#xe6e8;</string>  <!-- 箭头三角 -->
