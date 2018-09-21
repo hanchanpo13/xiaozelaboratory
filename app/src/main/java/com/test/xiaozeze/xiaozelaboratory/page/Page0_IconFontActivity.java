@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -136,8 +135,6 @@ public class Page0_IconFontActivity extends AppCompatActivity {
      */
     private class ParseHTMLTask extends AsyncTask<String, Void, List<IconFontInfo>> {
         
-        List<String> old_icon_code = Arrays.asList(getResources().getStringArray(R.array.old_icon));
-
         @Override
         protected void onPreExecute() {
             IconFontInfo.clear();
@@ -154,16 +151,14 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                     String[] allName = element.child(1).text().split("_");
                     if (allName.length == 3) {
                         String code4Show = element.child(0).text();
-                        if(!old_icon_code.contains(code4Show)){
-                            String code4XML = element.child(2).text();
-                            IconFontInfo.add(String.format("%s_%s", allName[0], allName[1]), allName[2], code4Show, code4XML);
-                        }
+                        String code4XML = element.child(2).text();
+                        IconFontInfo.add(String.format("%s_%s", allName[0], allName[1]), allName[2], code4Show, code4XML);
                     }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return IconFontInfo.getList();
+            return IconFontInfo.getAllList();
         }
 
         @Override
@@ -183,16 +178,18 @@ public class Page0_IconFontActivity extends AppCompatActivity {
 
         @Override
         protected Boolean doInBackground(Void... voids) {
-
-            if (!IconFontInfo.types.isEmpty()) {
+            Map<String, List<IconFontInfo>> translateList = IconFontInfo.getTranslateList(Page0_IconFontActivity.this);
+            if (!translateList.isEmpty()) {
                 StringBuilder sb = new StringBuilder();
                 StringBuilder sb1 = new StringBuilder();
-                Set<Map.Entry<String, List<IconFontInfo>>> entries = IconFontInfo.types.entrySet();
+                StringBuilder sb3 = new StringBuilder();
+                Set<Map.Entry<String, List<IconFontInfo>>> entries = translateList.entrySet();
                 for (Map.Entry<String, List<IconFontInfo>> entry : entries) {
                     String type = entry.getKey();
                     if (!TextUtils.isEmpty(type)) {
                         sb.append(String.format("<!-- %s -->\n", type));
                         List<IconFontInfo> fontInfos = entry.getValue();
+                        if (fontInfos.isEmpty()) continue;
                         for (IconFontInfo fontInfo : fontInfos) {
                             String allName4XML = TranslateUtil.translate("zh", "en", fontInfo.name);
                             if (!TextUtils.isEmpty(allName4XML)) {
@@ -200,14 +197,14 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                                 sb.append(String.format("<string name=\"%s_%s\">%s</string>\t<!-- %s -->", type, allName4XML, fontInfo.code4XML,fontInfo.name)).append("\n");
                                 sb1.append(String.format("<item>\"%s\"</item>", fontInfo.code4XML)).append("\n");
                             } else {
-                                Log.i("javen", fontInfo.name + "翻译失败");
+                                sb3.append(String.format("翻译失败--->%s",fontInfo.name)).append("\n");
                             }
                         }
                         sb.append(String.format("\n\n", type));
                     }
                 }
                 if (sb.length() > 0) {
-                    xmlStr = sb.append(sb1).toString();
+                    xmlStr = sb.append(sb1).append("\n------翻译失败-------\n").append(sb3).toString();
                     return true;
                 }
             }

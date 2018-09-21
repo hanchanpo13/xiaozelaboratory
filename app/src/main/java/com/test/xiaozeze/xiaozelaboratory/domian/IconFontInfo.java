@@ -1,7 +1,13 @@
 package com.test.xiaozeze.xiaozelaboratory.domian;
 
+import android.content.Context;
+
+import com.test.xiaozeze.xiaozelaboratory.R;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -25,7 +31,11 @@ public class IconFontInfo {
         iconFontInfos.add(info);
     }
 
-    public static List<IconFontInfo> getList() {
+    /**
+     * 获取全部数据
+     * @return
+     */
+    public static List<IconFontInfo> getAllList() {
         List<IconFontInfo> list = new ArrayList<>();
         Set<Map.Entry<String, List<IconFontInfo>>> entries = types.entrySet();
         for (Map.Entry<String, List<IconFontInfo>> entry : entries) {
@@ -33,6 +43,32 @@ public class IconFontInfo {
             list.addAll(infoList);
         }
         return list;
+    }
+
+    /**
+     * 获取需要翻译的数据
+     * @param cx
+     * @return
+     */
+    public static Map<String, List<IconFontInfo>> getTranslateList(Context cx) {
+        List<String> oldIconCode = Arrays.asList(cx.getResources().getStringArray(R.array.old_icon));
+        Map<String, List<IconFontInfo>> allInfo = new HashMap<>();
+        allInfo.putAll(types);
+        Set<Map.Entry<String, List<IconFontInfo>>> entries = allInfo.entrySet();
+        for (Map.Entry<String, List<IconFontInfo>> entry : entries) {
+            List<IconFontInfo> infoList = entry.getValue();
+            Iterator<IconFontInfo> iterator = infoList.iterator();
+            while (iterator.hasNext()){
+                IconFontInfo fontInfo = iterator.next();
+                if (oldIconCode.contains(fontInfo.code4Show)) {
+                    iterator.remove();
+                }
+            }
+            if (infoList.isEmpty()) {
+                entries.remove(infoList);
+            }
+        }
+        return allInfo;
     }
 
     public static void clear() {

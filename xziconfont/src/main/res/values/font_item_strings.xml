@@ -1,7 +1,42 @@
 <resources>
     
     <string-array name="old_icon">
-        <item></item>
+        <item>"&#xe6ee;"</item>
+        <item>"&#xe6ef;"</item>
+        <item>"&#xe6f0;"</item>
+        <item>"&#xe6f1;"</item>
+        <item>"&#xe6f2;"</item>
+        <item>"&#xe6f3;"</item>
+        <item>"&#xe6f4;"</item>
+        <item>"&#xe6f5;"</item>
+        <item>"&#xe6f6;"</item>
+        <item>"&#xe6f7;"</item>
+        <item>"&#xe6f8;"</item>
+        <item>"&#xe6f9;"</item>
+        <item>"&#xe6fa;"</item>
+        <item>"&#xe6fb;"</item>
+        <item>"&#xe6fc;"</item>
+        <item>"&#xe6fd;"</item>
+        <item>"&#xe6fe;"</item>
+        <item>"&#xe6ff;"</item>
+        <item>"&#xe700;"</item>
+        <item>"&#xe701;"</item>
+        <item>"&#xe702;"</item>
+        <item>"&#xe703;"</item>
+        <item>"&#xe704;"</item>
+        <item>"&#xe705;"</item>
+        <item>"&#xe706;"</item>
+        <item>"&#xe708;"</item>
+        <item>"&#xe70b;"</item>
+        <item>"&#xe6e8;"</item>
+        <item>"&#xe6e9;"</item>
+        <item>"&#xe6ea;"</item>
+        <item>"&#xe6eb;"</item>
+        <item>"&#xe6ec;"</item>
+        <item>"&#xe6ed;"</item>
+        <item>"&#xe707;"</item>
+        <item>"&#xe709;"</item>
+        <item>"&#xe70a;"</item>
     </string-array>
 
 </resources>
