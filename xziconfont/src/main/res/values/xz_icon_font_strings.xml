@@ -1,10 +1,46 @@
 <resources>
     <string name="app_name">XZIconFont</string>
+
+    <!-- iconf_facility -->
+    <string name="iconf_facility_television">&#xe6ee;</string>  <!-- 电视 -->
+    <string name="iconf_facility_pet">&#xe6ef;</string>  <!-- 宠物 -->
+    <string name="iconf_facility_singleGuard">&#xe6f0;</string>  <!-- 独卫 -->
+    <string name="iconf_facility_smoking">&#xe6f1;</string>  <!-- 抽烟 -->
+    <string name="iconf_facility_elevator">&#xe6f2;</string>  <!-- 电梯 -->
+    <string name="iconf_facility_refrigerator">&#xe6f3;</string>  <!-- 冰箱 -->
+    <string name="iconf_facility_party">&#xe6f4;</string>  <!-- 聚会 -->
+    <string name="iconf_facility_airConditioner">&#xe6f5;</string>  <!-- 空调 -->
+    <string name="iconf_facility_towel">&#xe6f6;</string>  <!-- 毛巾 -->
+    <string name="iconf_facility_hotShower">&#xe6f7;</string>  <!-- 热水淋浴 -->
+    <string name="iconf_facility_suitableForDisabledPersons">&#xe6f8;</string>  <!-- 适合残疾人 -->
+    <string name="iconf_facility_entranceGuard">&#xe6f9;</string>  <!-- 门禁 -->
+    <string name="iconf_facility_heating">&#xe6fa;</string>  <!-- 暖气 -->
+    <string name="iconf_facility_suitableForChildren">&#xe6fb;</string>  <!-- 适合儿童 -->
+    <string name="iconf_facility_suitableForTheElderly">&#xe6fc;</string>  <!-- 适合老人 -->
+    <string name="iconf_facility_parkingSpace">&#xe6fd;</string>  <!-- 停车位 -->
+    <string name="iconf_facility_toiletPaper">&#xe6fe;</string>  <!-- 手纸 -->
+    <string name="iconf_facility_slipper">&#xe6ff;</string>  <!-- 拖鞋 -->
+    <string name="iconf_facility_washingMachine">&#xe700;</string>  <!-- 洗衣机 -->
+    <string name="iconf_facility_wirelessNetwork">&#xe701;</string>  <!-- 无线网络 -->
+    <string name="iconf_facility_drinkingWaterEquipment">&#xe702;</string>  <!-- 饮水设备 -->
+    <string name="iconf_facility_toothbrush">&#xe703;</string>  <!-- 牙刷 -->
+    <string name="iconf_facility_soap">&#xe704;</string>  <!-- 香皂 -->
+    <string name="iconf_facility_wiredNetwork">&#xe705;</string>  <!-- 有线网络 -->
+    <string name="iconf_facility_bathtub">&#xe706;</string>  <!-- 浴缸 -->
+    <string name="iconf_facility_cook">&#xe708;</string>  <!-- 做饭 -->
+    <string name="iconf_facility_shampoo">&#xe70b;</string>  <!-- 浴液洗发水 -->
+
     <!-- iconf_common -->
-    <string name="iconf_common_arrowTriangle">&#xe6e8;</string>
-    <string name="iconf_common_turnOffLinearity">&#xe6e9;</string>
-    <string name="iconf_common_closeTheRing">&#xe6ea;</string>
-    <string name="iconf_common_arrowRound">&#xe6eb;</string>
-    <string name="iconf_common_closeTheCircle">&#xe6ec;</string>
-    <string name="iconf_common_arrowLinear">&#xe6ed;</string>
+    <string name="iconf_common_arrowheadTriangle">&#xe6e8;</string>  <!-- 箭头三角 -->
+    <string name="iconf_common_closeLinear">&#xe6e9;</string>  <!-- 关闭线性 -->
+    <string name="iconf_common_closeTheRing">&#xe6ea;</string>  <!-- 关闭圆环 -->
+    <string name="iconf_common_arrowheadCircle">&#xe6eb;</string>  <!-- 箭头圆形 -->
+    <string name="iconf_common_turnOffTheCircle">&#xe6ec;</string>  <!-- 关闭圆形 -->
+    <string name="iconf_common_arrowheadLinearity">&#xe6ed;</string>  <!-- 箭头线性 -->
+
+    <!-- iconf_type -->
+    <string name="iconf_type_aSingleRoom">&#xe707;</string>  <!-- 单间 -->
+    <string name="iconf_type_holdTogether">&#xe709;</string>  <!-- 合住 -->
+    <string name="iconf_type_aCompleteSet">&#xe70a;</string>  <!-- 整套 -->
+    
 </resources>

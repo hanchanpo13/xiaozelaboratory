@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         app:text_Orientation="left"
         app:font_Text="小泽泽"
-        app:iconCode="@string/iconf_common_arrowTriangle"
+        app:iconCode="@string/iconf_common_arrowheadTriangle"
         app:iconSize="12dp"/>
 
     <RelativeLayout
@@ -33,7 +33,7 @@
             app:text_Orientation="top"
             app:font_Text="小泽泽"
             app:icon_rotation="rotation_90"
-            app:iconCode="@string/iconf_common_arrowTriangle"
+            app:iconCode="@string/iconf_common_arrowheadTriangle"
             app:iconSize="12dp"/>
 
 
@@ -45,7 +45,7 @@
             app:icon_rotation="rotation_180"
             app:text_Orientation="right"
             app:font_Text="小泽泽"
-            app:iconCode="@string/iconf_common_arrowTriangle"
+            app:iconCode="@string/iconf_common_arrowheadTriangle"
             app:iconSize="40dp"/>
 
         <com.xiaozeze.xziconfont.XZIconFontView
@@ -56,7 +56,7 @@
             app:text_Orientation="bottom"
             app:icon_rotation="rotation_-90"
             app:font_Text="小泽泽"
-            app:iconCode="@string/iconf_common_arrowTriangle"
+            app:iconCode="@string/iconf_common_arrowheadTriangle"
             app:iconSize="14dp"/>
     </RelativeLayout>
 

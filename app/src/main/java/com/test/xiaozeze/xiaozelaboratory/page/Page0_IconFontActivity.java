@@ -31,6 +31,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -71,7 +72,7 @@ public class Page0_IconFontActivity extends AppCompatActivity {
     }
 
     private void testIconFontMix() {
-        String icon = getResources().getString(R.string.iconf_common_arrowTriangle);
+        String icon = getResources().getString(R.string.iconf_common_arrowheadTriangle);
         //速订是一种更高效的预订方式：房客下单付款后即完成预订，不再需要您的确认。了解更多
         SpannableStringBuilder spannableInfo = SpannableStringUtils
                 .getBuilder("速订").setBold()
@@ -134,6 +135,9 @@ public class Page0_IconFontActivity extends AppCompatActivity {
      * 解析HTML
      */
     private class ParseHTMLTask extends AsyncTask<String, Void, List<IconFontInfo>> {
+        
+        List<String> old_icon_code = Arrays.asList(getResources().getStringArray(R.array.old_icon));
+
         @Override
         protected void onPreExecute() {
             IconFontInfo.clear();
@@ -150,8 +154,10 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                     String[] allName = element.child(1).text().split("_");
                     if (allName.length == 3) {
                         String code4Show = element.child(0).text();
-                        String code4XML = element.child(2).text();
-                        IconFontInfo.add(String.format("%s_%s", allName[0], allName[1]), allName[2], code4Show, code4XML);
+                        if(!old_icon_code.contains(code4Show)){
+                            String code4XML = element.child(2).text();
+                            IconFontInfo.add(String.format("%s_%s", allName[0], allName[1]), allName[2], code4Show, code4XML);
+                        }
                     }
                 }
             } catch (Exception e) {
@@ -173,12 +179,14 @@ public class Page0_IconFontActivity extends AppCompatActivity {
      * 翻译
      */
     private class TranslateTask extends AsyncTask<Void, Void, Boolean> {
+        
 
         @Override
         protected Boolean doInBackground(Void... voids) {
 
             if (!IconFontInfo.types.isEmpty()) {
                 StringBuilder sb = new StringBuilder();
+                StringBuilder sb1 = new StringBuilder();
                 Set<Map.Entry<String, List<IconFontInfo>>> entries = IconFontInfo.types.entrySet();
                 for (Map.Entry<String, List<IconFontInfo>> entry : entries) {
                     String type = entry.getKey();
@@ -190,17 +198,16 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                             if (!TextUtils.isEmpty(allName4XML)) {
                                 allName4XML = getHumpText(allName4XML);
                                 sb.append(String.format("<string name=\"%s_%s\">%s</string>\t<!-- %s -->", type, allName4XML, fontInfo.code4XML,fontInfo.name)).append("\n");
+                                sb1.append(String.format("<item>\"%s\"</item>", fontInfo.code4XML)).append("\n");
                             } else {
                                 Log.i("javen", fontInfo.name + "翻译失败");
                             }
                         }
                         sb.append(String.format("\n\n", type));
                     }
-
                 }
-
                 if (sb.length() > 0) {
-                    xmlStr = sb.toString();
+                    xmlStr = sb.append(sb1).toString();
                     return true;
                 }
             }
@@ -223,11 +230,16 @@ public class Page0_IconFontActivity extends AppCompatActivity {
         public String getHumpText(String text) {
             StringBuilder sb = new StringBuilder();
             String[] split = text.split(" ");
-            for (String s : split) {
-                if (!Character.isUpperCase(s.charAt(0))) {
-                    s = new StringBuilder().append(Character.toUpperCase(s.charAt(0))).append(s.substring(1)).toString();
+            for (int i = 0; i < split.length; i++) {
+                String s = split[i];
+                if (i == 0) {
+                    if (Character.isUpperCase(s.charAt(0))) {
+                        s = new StringBuilder().append(Character.toLowerCase(s.charAt(0))).append(s.substring(1)).toString();
+                    }
                 } else {
-                    s = new StringBuilder().append(Character.toLowerCase(s.charAt(0))).append(s.substring(1)).toString();
+                    if (!Character.isUpperCase(s.charAt(0))) {
+                        s = new StringBuilder().append(Character.toUpperCase(s.charAt(0))).append(s.substring(1)).toString();
+                    }
                 }
                 sb.append(s);
             }
