@@ -11,6 +11,12 @@
             <flag name="no" value="0"/>
             <flag name="yes" value="1"/>
         </attr>
+
+        <attr name="iconOffset_left" format="dimension"/>
+        <attr name="iconOffset_top" format="dimension"/>
+        <attr name="iconOffset_right" format="dimension"/>
+        <attr name="iconOffset_bottom" format="dimension"/>
+
         <attr name="textPadding" format="dimension"/>
 
         <!--文字属性-->

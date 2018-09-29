@@ -5,10 +5,14 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.annotation.IntRange;
 import android.support.annotation.StringRes;
-import android.text.TextPaint;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -55,6 +59,7 @@ public class XZIconFontView extends RelativeLayout {
         // 初始化视图
         View.inflate(getContext(), R.layout.icon_font, this);
         mIconView = findViewById(R.id.fontViewContent);
+        mIconView.setMovementMethod(LinkMovementMethod.getInstance());
         // 解析XML属性
 
         // 获取自定义属性
@@ -65,6 +70,10 @@ public class XZIconFontView extends RelativeLayout {
         mIconBound.mColor = ta.getColor(R.styleable.XZIconFontView_iconColor, Color.BLACK);
         mIconBound.mSize = ta.getDimension(R.styleable.XZIconFontView_iconSize, dp2px(15));
         mIconBound.mStyle = ta.getInt(R.styleable.XZIconFontView_iconBold, Typeface.NORMAL);
+        int iconOffset_left = (int) ta.getDimension(R.styleable.XZIconFontView_iconOffset_left, 0);
+        int iconOffset_top = (int) ta.getDimension(R.styleable.XZIconFontView_iconOffset_top, 0);
+        int iconOffset_right = (int) ta.getDimension(R.styleable.XZIconFontView_iconOffset_right, 0);
+        int iconOffset_bottom = (int) ta.getDimension(R.styleable.XZIconFontView_iconOffset_bottom, 0);
 
         // 文字相关
         mTextBound.orientation = ta.getInt(R.styleable.XZIconFontView_text_Orientation, LEFT);
@@ -76,6 +85,7 @@ public class XZIconFontView extends RelativeLayout {
         ta.recycle();
 
         // 初始化IconView
+        mIconView.setPadding(iconOffset_left,iconOffset_top,iconOffset_right,iconOffset_bottom);
         rendererIconView();
 
         // 初始化 TextView
@@ -89,7 +99,8 @@ public class XZIconFontView extends RelativeLayout {
         mIconView.setText(mIconBound.mText);
         mIconView.setTextColor(mIconBound.mColor);
         mIconView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mIconBound.mSize);
-        mIconView.getPaint().setFakeBoldText(Typeface.BOLD == mIconBound.mStyle);
+        Typeface typeface = Typeface.create(mIconView.getTypeface(), mTextBound.mStyle);
+        mIconView.setTypeface(typeface);
     }
 
 
@@ -100,6 +111,7 @@ public class XZIconFontView extends RelativeLayout {
         // 初次创建，加入到父布局中
         if (mTextView == null) {
             mTextView = new TextView(getContext());
+            mTextView.setMovementMethod(LinkMovementMethod.getInstance());
             mTextView.setId(R.id.tv_id);
             addView(mTextView, -2, -2);
         }
@@ -145,9 +157,7 @@ public class XZIconFontView extends RelativeLayout {
             mTextView.setText(mTextBound.mText);
             mTextView.setTextColor(mTextBound.mColor);
             mTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextBound.mSize);
-            TextPaint textPaint = mTextView.getPaint();
-            textPaint.setFakeBoldText(Typeface.BOLD == mIconBound.mStyle || Typeface.BOLD_ITALIC == mTextBound.mStyle);// 粗体
-            textPaint.setTextSkewX(Typeface.ITALIC == mIconBound.mStyle || Typeface.BOLD_ITALIC == mTextBound.mStyle ? -0.5f : 0);//float类型参数，负数表示右斜，整数左斜
+            mTextView.setTypeface(Typeface.create(Typeface.SANS_SERIF, mTextBound.mStyle));
         }
         mIconView.setLayoutParams(icon_lp);
         mTextView.setVisibility(showIt ? VISIBLE : GONE);
@@ -191,6 +201,16 @@ public class XZIconFontView extends RelativeLayout {
      */
     public void setIconColor(@ColorInt int iconColor) {
         mIconBound.mColor = iconColor;
+        rendererIconView();
+    }
+
+    /**
+     * 设置icon颜色
+     *
+     * @param iconColorId
+     */
+    public void setIconColorRes(@ColorRes int iconColorId) {
+        mIconBound.mColor = ContextCompat.getColor(getContext(),iconColorId);
         rendererIconView();
     }
 
@@ -248,6 +268,27 @@ public class XZIconFontView extends RelativeLayout {
     }
 
     /**
+     * 设置文字
+     * @param text
+     * @param orientation
+     */
+    public void setText(CharSequence text, @IntRange(from = LEFT, to = BOTTOM) int orientation) {
+        mTextBound.mText= text;
+        mTextBound.orientation= orientation;
+        rendererTextView();
+    }
+
+    /**
+     * 设置文字间距
+     * @param spacing
+     */
+    public void setTextSpacing(float spacing) {
+        if (Build.VERSION.SDK_INT >= 21) {
+            mTextView.setLetterSpacing(spacing);
+        }
+    }
+
+    /**
      * 设置你默认选择器
      *
      * @param colorSelector
@@ -300,7 +341,7 @@ public class XZIconFontView extends RelativeLayout {
             mColor = color;
         }
 
-        public void setStyle(int style) {
+        public void setStyle(@IntRange(from =Typeface.NORMAL,to = Typeface.BOLD_ITALIC) int style) {
             mStyle = style;
         }
 

@@ -38,9 +38,38 @@
     <string name="iconf_common_turnOffTheCircle">&#xe6ec;</string>  <!-- 关闭圆形 -->
     <string name="iconf_common_arrowheadLinearity">&#xe6ed;</string>  <!-- 箭头线性 -->
 
+    <string name="iconf_common_multipleSelectionUnchecked">&#xe71f;</string>  <!-- 多选未选中 -->
+    <string name="iconf_common_unselectedSingleElection">&#xe720;</string>  <!-- 单选未选中 -->
+    <string name="iconf_common_singleElection">&#xe721;</string>  <!-- 单选选中 -->
+    <string name="iconf_common_reduce">&#xe722;</string>  <!-- 减少 -->
+    <string name="iconf_common_circularSelection">&#xe723;</string>  <!-- 圆形选择 -->
+    <string name="iconf_common_multipleSelection">&#xe724;</string>  <!-- 多选选中 -->
+    <string name="iconf_common_increase">&#xe725;</string>  <!-- 增加 -->
+
     <!-- iconf_type -->
     <string name="iconf_type_aSingleRoom">&#xe707;</string>  <!-- 单间 -->
     <string name="iconf_type_holdTogether">&#xe709;</string>  <!-- 合住 -->
     <string name="iconf_type_aCompleteSet">&#xe70a;</string>  <!-- 整套 -->
+    
+    <!-- iconf_my -->
+    <string name="iconf_my_comment">&#xe70c;</string>  <!-- 点评 -->
+    <string name="iconf_my_frequentCheckInPeople">&#xe70d;</string>  <!-- 常用入住人 -->
+    <string name="iconf_my_invoice">&#xe70f;</string>  <!-- 发票 -->
+    <string name="iconf_my_theWayOfWaitingForGuests">&#xe710;</string>  <!-- 待客之道 -->
+    <string name="iconf_my_toot">&#xe711;</string>  <!-- 嘟币 -->
+    <string name="iconf_my_integral">&#xe712;</string>  <!-- 积分 -->
+    <string name="iconf_my_shareConcessions">&#xe713;</string>  <!-- 分享优惠 -->
+    <string name="iconf_my_settlementSystem">&#xe714;</string>  <!-- 结算系统 -->
+    <string name="iconf_my_collection">&#xe715;</string>  <!-- 收藏 -->
+    <string name="iconf_my_shoppingMall">&#xe716;</string>  <!-- 商城 -->
+    <string name="iconf_my_softWear">&#xe717;</string>  <!-- 软装 -->
+    <string name="iconf_my_contactCustomerService">&#xe718;</string>  <!-- 联系客服 -->
+    <string name="iconf_my_receivingAddress">&#xe719;</string>  <!-- 收件地址 -->
+    <string name="iconf_my_receivablesSetting">&#xe71a;</string>  <!-- 收款设置 -->
+    <string name="iconf_my_speedBookingManagement">&#xe71b;</string>  <!-- 速订管理 -->
+    <string name="iconf_my_sesameCredit">&#xe71c;</string>  <!-- 芝麻信用 -->
+    <string name="iconf_my_piggyHousekeeper">&#xe71d;</string>  <!-- 小猪管家 -->
+    <string name="iconf_my_intelligentDoorLock">&#xe71e;</string>  <!-- 智能门锁 -->
+    <string name="iconf_my_cashCoupon">&#xe70e;</string>  <!-- 代金券 -->
     
 </resources>
