@@ -57,6 +57,10 @@
         <activity
             android:name=".page.Page2_DynamicIconActivity"
             android:screenOrientation="portrait"/>
+        
+        <activity
+            android:name=".page.Page3_AOPDemoActivity"
+            android:screenOrientation="portrait"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

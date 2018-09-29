@@ -28,7 +28,8 @@ public class PageInfo {
         {
             add(new PageInfo("IconFont项目", Page0_IconFontActivity.class));
             add(new PageInfo("增量更新项目", Page1_DiffUpdateActivity.class));
-            add(new PageInfo("动态Icon项项目", Page2_DynamicIconActivity.class));
+            add(new PageInfo("动态Icon项目", Page2_DynamicIconActivity.class));
+            add(new PageInfo("AOP实验项目", Page2_DynamicIconActivity.class));
         }
     };
 
