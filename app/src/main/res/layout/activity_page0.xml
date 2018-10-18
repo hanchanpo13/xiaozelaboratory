@@ -1,70 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_share"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="发送配置文件"
-        android:visibility="gone"/>
+        android:layout_height="45dp"
+        android:orientation="horizontal">
 
-    <com.xiaozeze.xziconfont.XZIconFontView
-        android:id="@+id/icon_font_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:text_Orientation="left"
-        app:font_Text="小泽泽"
-        app:iconCode="@string/iconf_common_arrowheadTriangle"
-        app:iconSize="12dp"/>
+        <Button
+            android:id="@+id/btn_copy_icon_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="复制配置信息"/>
 
-    <RelativeLayout
+        <Button
+            android:id="@+id/btn_show_icons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="显示全部icon"/>
+
+    </LinearLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:fillViewport="true">
 
-        <com.xiaozeze.xziconfont.XZIconFontView
-            android:id="@+id/icon_font_view1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:text_Orientation="top"
-            app:font_Text="小泽泽"
-            app:icon_rotation="rotation_90"
-            app:iconCode="@string/iconf_common_arrowheadTriangle"
-            app:iconSize="12dp"/>
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.xiaozeze.xziconfont.XZIconFontView
+                    android:id="@+id/icon_font_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:font_Text="文字左"
+                    app:iconCode="@string/iconf_common_arrowheadTriangle"
+                    app:text_Orientation="left"/>
 
 
-        <com.xiaozeze.xziconfont.XZIconFontView
-            android:id="@+id/icon_font_view2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/icon_font_view1"
-            app:icon_rotation="rotation_180"
-            app:text_Orientation="right"
-            app:font_Text="小泽泽"
-            app:iconCode="@string/iconf_common_arrowheadTriangle"
-            app:iconSize="40dp"/>
+                <com.xiaozeze.xziconfont.XZIconFontView
+                    android:id="@+id/icon_font_view1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/icon_font_view"
+                    app:font_Text="文字下"
+                    app:iconCode="@string/iconf_common_arrowheadTriangle"
+                    app:icon_rotation="rotation_90"
+                    app:text_Orientation="top"/>
 
-        <com.xiaozeze.xziconfont.XZIconFontView
-            android:id="@+id/icon_font_view3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/icon_font_view2"
-            app:text_Orientation="bottom"
-            app:icon_rotation="rotation_-90"
-            app:font_Text="小泽泽"
-            app:iconCode="@string/iconf_common_arrowheadTriangle"
-            app:iconSize="14dp"/>
-    </RelativeLayout>
+
+                <com.xiaozeze.xziconfont.XZIconFontView
+                    android:id="@+id/icon_font_view2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/icon_font_view1"
+                    app:font_Text="文字右"
+                    app:iconCode="@string/iconf_common_arrowheadTriangle"
+                    app:icon_rotation="rotation_180"
+                    app:text_Orientation="right"/>
+
+                <com.xiaozeze.xziconfont.XZIconFontView
+                    android:id="@+id/icon_font_view3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/icon_font_view2"
+                    app:font_Text="文字下"
+                    app:iconCode="@string/iconf_common_arrowheadTriangle"
+                    app:icon_rotation="rotation_-90"
+                    app:text_Orientation="bottom"/>
+
+                <com.xiaozeze.xziconfont.XZIconFontView
+                    android:id="@+id/icon_font_view4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/icon_font_view3"
+                    app:font_Text="文字粗"
+                    app:font_TextStyle="bold"
+                    app:iconCode="@string/iconf_facility_television"
+                    app:text_Orientation="left"/>
+
+                <com.xiaozeze.xziconfont.XZIconFontView
+                    android:id="@+id/icon_font_view5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/icon_font_view4"
+                    app:font_Text="图标粗"
+                    app:iconBold="yes"
+                    app:iconCode="@string/iconf_facility_television"
+                    app:text_Orientation="left"/>
+
+            </RelativeLayout>
+
+            <com.xiaozeze.xziconfont.XZIconFontView
+                android:id="@+id/icon_font_view6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/icon_font_view4"
+                app:font_Text="图标粗"
+                app:iconBold="yes"
+                app:iconCode="@string/iconf_facility_television"
+                app:text_Orientation="left"/>
+        </LinearLayout>
+
+    </ScrollView>
 
     <GridView
         android:id="@+id/icon_font_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:numColumns="3"/>
+        android:layout_marginTop="50dp"
+        android:background="@android:color/white"
+        android:numColumns="3"
+        android:visibility="gone"/>
 
-</LinearLayout>
+</FrameLayout>

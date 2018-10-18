@@ -30,7 +30,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.InputStream;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -41,6 +40,7 @@ public class Page0_IconFontActivity extends AppCompatActivity {
 
     private GridView mFontList;
     private Button btn_share;
+    private Button btn_copy;
     private XZIconFontView mFontView;
     private FontAdapter mAdapter;
 
@@ -48,12 +48,13 @@ public class Page0_IconFontActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page0);
-        mFontView = findViewById(R.id.icon_font_view);
+        mFontView = findViewById(R.id.icon_font_view6);
         mFontList = findViewById(R.id.icon_font_list);
-        btn_share = findViewById(R.id.btn_share);
+        btn_share = findViewById(R.id.btn_show_icons);
+        btn_copy = findViewById(R.id.btn_copy_icon_info);
         mAdapter = new FontAdapter(this);
         mFontList.setAdapter(mAdapter);
-        btn_share.setOnClickListener(new View.OnClickListener() {
+        btn_copy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ShareUtils.sendFileByOtherApp(Page0_IconFontActivity.this, "");
@@ -62,10 +63,19 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                 // 创建普通字符型ClipData
                 ClipData mClipData = ClipData.newPlainText("Label", xmlStr);
                 // 将ClipData内容放到系统剪贴板里。
-                cm.setPrimaryClip(mClipData);
+                cm.setPrimaryClip (mClipData);
 
             }
         });
+
+        btn_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isShow = mFontList.getVisibility() == View.VISIBLE;
+                mFontList.setVisibility(isShow ? View.GONE : View.VISIBLE);
+            }
+        });
+        
         testIconFontMix();
         new ParseHTMLTask().execute("demo_unicode.html");
     }

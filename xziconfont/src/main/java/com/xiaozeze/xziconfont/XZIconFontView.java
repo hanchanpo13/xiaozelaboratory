@@ -11,11 +11,15 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.IntRange;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
+import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -59,7 +63,7 @@ public class XZIconFontView extends RelativeLayout {
         // 初始化视图
         View.inflate(getContext(), R.layout.icon_font, this);
         mIconView = findViewById(R.id.fontViewContent);
-        mIconView.setMovementMethod(LinkMovementMethod.getInstance());
+        mIconView.setMovementMethod(IconFontLinkMovementMethod.getInstance());
         // 解析XML属性
 
         // 获取自定义属性
@@ -111,7 +115,7 @@ public class XZIconFontView extends RelativeLayout {
         // 初次创建，加入到父布局中
         if (mTextView == null) {
             mTextView = new TextView(getContext());
-            mTextView.setMovementMethod(LinkMovementMethod.getInstance());
+            mTextView.setMovementMethod(IconFontLinkMovementMethod.getInstance());
             mTextView.setId(R.id.tv_id);
             addView(mTextView, -2, -2);
         }
@@ -210,7 +214,7 @@ public class XZIconFontView extends RelativeLayout {
      * @param iconColorId
      */
     public void setIconColorRes(@ColorRes int iconColorId) {
-        mIconBound.mColor = ContextCompat.getColor(getContext(),iconColorId);
+        mIconBound.mColor = ContextCompat.getColor(getContext(), iconColorId);
         rendererIconView();
     }
 
@@ -269,23 +273,44 @@ public class XZIconFontView extends RelativeLayout {
 
     /**
      * 设置文字
+     *
      * @param text
      * @param orientation
      */
     public void setText(CharSequence text, @IntRange(from = LEFT, to = BOTTOM) int orientation) {
-        mTextBound.mText= text;
-        mTextBound.orientation= orientation;
+        mTextBound.mText = text;
+        mTextBound.orientation = orientation;
         rendererTextView();
     }
 
     /**
      * 设置文字间距
+     *
      * @param spacing
      */
     public void setTextSpacing(float spacing) {
         if (Build.VERSION.SDK_INT >= 21) {
             mTextView.setLetterSpacing(spacing);
         }
+    }
+
+    /**
+     * 设置文字颜色
+     *
+     * @param color
+     */
+    public void setTextColor(@ColorInt int color) {
+        mTextBound.mColor = color;
+        rendererTextView();
+    }
+
+    /**
+     * 设置文字颜色
+     *
+     * @param colorRes
+     */
+    public void setTextColorRes(@ColorRes int colorRes) {
+        setTextColor(ContextCompat.getColor(getContext(),colorRes));
     }
 
     /**
@@ -341,7 +366,7 @@ public class XZIconFontView extends RelativeLayout {
             mColor = color;
         }
 
-        public void setStyle(@IntRange(from =Typeface.NORMAL,to = Typeface.BOLD_ITALIC) int style) {
+        public void setStyle(@IntRange(from = Typeface.NORMAL, to = Typeface.BOLD_ITALIC) int style) {
             mStyle = style;
         }
 
@@ -384,12 +409,45 @@ public class XZIconFontView extends RelativeLayout {
             TextBound bound;
             try {
                 bound = (TextBound) super.clone();
-                // person.arrFavor = arrFavor.clone();
                 return bound;
             } catch (CloneNotSupportedException e) {
                 e.printStackTrace();
             }
             return new TextBound();
+        }
+    }
+
+    /**
+     * @Description: 解决高亮点击和父控件点击事件冲突问题
+     * @auther: fengzeyuan
+     * @Date: 2018/10/16 下午1:42
+     */
+
+    public static class IconFontLinkMovementMethod extends LinkMovementMethod {
+
+
+        private static class Holder {
+            public static final IconFontLinkMovementMethod instance = new IconFontLinkMovementMethod();
+        }
+
+        private IconFontLinkMovementMethod() {
+        }
+
+        public static IconFontLinkMovementMethod getInstance() {
+            return Holder.instance;
+        }
+
+        @Override
+        public boolean onTouchEvent(TextView widget, Spannable buffer, MotionEvent event) {
+            boolean b = super.onTouchEvent(widget, buffer, event);
+            //解决点击事件冲突问题
+            if (!b && event.getAction() == MotionEvent.ACTION_UP) {
+                ViewParent parent = widget.getParent();//处理widget的父控件点击事件
+                if (parent instanceof ViewGroup) {
+                    return ((ViewGroup) parent).performClick();
+                }
+            }
+            return b;
         }
     }
 }
