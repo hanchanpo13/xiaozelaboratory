@@ -103,7 +103,7 @@ public class XZIconFontView extends RelativeLayout {
         mIconView.setText(mIconBound.mText);
         mIconView.setTextColor(mIconBound.mColor);
         mIconView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mIconBound.mSize);
-        Typeface typeface = Typeface.create(mIconView.getTypeface(), mTextBound.mStyle);
+        Typeface typeface = Typeface.create(mIconView.getTypeface(), mIconBound.mStyle);
         mIconView.setTypeface(typeface);
     }
 
