@@ -1,8 +1,8 @@
-package com.test.xiaozeze.xiaozelaboratory;
+package com.test.xiaozeze;
 
 import android.app.Application;
 
-import com.test.xiaozeze.xiaozelaboratory.utils.Utils;
+import com.test.xiaozeze.utils.Utils;
 
 /**
  * Description:

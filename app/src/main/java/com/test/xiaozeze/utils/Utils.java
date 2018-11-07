@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.utils;
+package com.test.xiaozeze.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

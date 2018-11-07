@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.test.xiaozeze.xiaozelaboratory.R;
-import com.test.xiaozeze.xiaozelaboratory.utils.Utils;
+import com.test.xiaozeze.utils.Utils;
 import com.xiaozeze.appdiffupdate.DiffPatchUtils;
 
 import java.io.File;

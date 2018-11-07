@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.utils;
+package com.test.xiaozeze.utils;
 
 import android.content.pm.PackageManager;
 import android.text.TextUtils;

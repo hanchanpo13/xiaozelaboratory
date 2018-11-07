@@ -12,8 +12,8 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.test.xiaozeze.xiaozelaboratory.R;
-import com.test.xiaozeze.xiaozelaboratory.utils.AppUtils;
-import com.test.xiaozeze.xiaozelaboratory.utils.SPUtils;
+import com.test.xiaozeze.utils.AppUtils;
+import com.test.xiaozeze.utils.SPUtils;
 
 import java.util.List;
 

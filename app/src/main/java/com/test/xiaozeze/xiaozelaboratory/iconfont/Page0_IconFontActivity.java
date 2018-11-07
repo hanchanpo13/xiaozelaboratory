@@ -16,11 +16,11 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.test.xiaozeze.xiaozelaboratory.R;
-import com.test.xiaozeze.xiaozelaboratory.homepage.XZBaseListAdapter;
-import com.test.xiaozeze.xiaozelaboratory.utils.ShareUtils;
-import com.test.xiaozeze.xiaozelaboratory.utils.SpannableStringUtils;
-import com.test.xiaozeze.xiaozelaboratory.utils.TranslateUtil;
-import com.test.xiaozeze.xiaozelaboratory.utils.Utils;
+import com.test.xiaozeze.homepage.XZBaseListAdapter;
+import com.test.xiaozeze.utils.ShareUtils;
+import com.test.xiaozeze.utils.SpannableStringUtils;
+import com.test.xiaozeze.utils.TranslateUtil;
+import com.test.xiaozeze.utils.Utils;
 import com.xiaozeze.xziconfont.XZIconFontView;
 
 import org.jsoup.Jsoup;

@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.homepage;
+package com.test.xiaozeze.homepage;
 
 import android.content.Context;
 import android.view.LayoutInflater;

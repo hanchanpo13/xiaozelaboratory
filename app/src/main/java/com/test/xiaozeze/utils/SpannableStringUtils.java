@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.utils;
+package com.test.xiaozeze.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -37,7 +37,7 @@ import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import android.util.TypedValue;
 
-import com.test.xiaozeze.xiaozelaboratory.XZApp;
+import com.test.xiaozeze.XZApp;
 
 import static android.graphics.BlurMaskFilter.Blur;
 

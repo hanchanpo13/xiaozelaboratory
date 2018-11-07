@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.homepage;
+package com.test.xiaozeze.homepage;
 
 import android.app.Activity;
 import android.content.Context;
