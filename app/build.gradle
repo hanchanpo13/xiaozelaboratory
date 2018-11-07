@@ -10,22 +10,37 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            debuggable true
+            testProguardFile 'proguard-test-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-base.pro', 'proguard-app.pro'
         }
     }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs') 
     
+    implementation project(':mylibs:xziconfont')
+
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'org.jsoup:jsoup:1.9.2'
-    
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation project(':xziconfont')
 }

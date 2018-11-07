@@ -1,1 +1,4 @@
-include ':app', ':xziconfont', ':appdiffupdate', ':aopdemo'
+include ':app', 
+        ':mylibs:xziconfont', 
+        ':mylibs:appdiffupdate', 
+        ':mylibs:aoplib'
