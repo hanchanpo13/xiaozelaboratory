@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.page;
+package com.test.xiaozeze.xiaozelaboratory.iconfont;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -16,8 +16,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.test.xiaozeze.xiaozelaboratory.R;
-import com.test.xiaozeze.xiaozelaboratory.domian.IconFontInfo;
-import com.test.xiaozeze.xiaozelaboratory.uiBase.XZBaseListAdapter;
+import com.test.xiaozeze.xiaozelaboratory.homepage.XZBaseListAdapter;
 import com.test.xiaozeze.xiaozelaboratory.utils.ShareUtils;
 import com.test.xiaozeze.xiaozelaboratory.utils.SpannableStringUtils;
 import com.test.xiaozeze.xiaozelaboratory.utils.TranslateUtil;
@@ -30,6 +29,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -68,6 +68,7 @@ public class Page0_IconFontActivity extends AppCompatActivity {
             }
         });
 
+        
         btn_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +82,7 @@ public class Page0_IconFontActivity extends AppCompatActivity {
     }
 
     private void testIconFontMix() {
-        String icon = getResources().getString(R.string.iconf_common_arrowheadTriangle);
+        String icon = getResources().getString(R.string.common_arrowheadTriangle);
         //速订是一种更高效的预订方式：房客下单付款后即完成预订，不再需要您的确认。了解更多
         SpannableStringBuilder spannableInfo = SpannableStringUtils
                 .getBuilder("速订").setBold()
@@ -159,10 +160,12 @@ public class Page0_IconFontActivity extends AppCompatActivity {
                 Elements tag_li_list = doc.select("div.main").get(0).getElementsByTag("li");
                 for (Element element : tag_li_list) {
                     String[] allName = element.child(1).text().split("_");
+                    String code4Show = element.child(0).text();
+                    String code4XML = element.child(2).text();
                     if (allName.length == 3) {
-                        String code4Show = element.child(0).text();
-                        String code4XML = element.child(2).text();
                         IconFontInfo.add(String.format("%s_%s", allName[0], allName[1]), allName[2], code4Show, code4XML);
+                    } else if (allName.length == 2) {// 需求变更
+                        IconFontInfo.add(getType(allName[0]), allName[1], code4Show, code4XML);
                     }
                 }
             } catch (Exception e) {
@@ -253,6 +256,25 @@ public class Page0_IconFontActivity extends AppCompatActivity {
             return sb.toString();
         }
     }
+
+    //  ------------------------------- 兼容逻辑 ----------------------
+
+    public static Map<String, String> typeMap = new HashMap<String, String>() {
+        {
+            put("comm", "common");
+            put("faci", "facility");
+        }
+    };
+
+    private static String getType(String type) {
+        String str = typeMap.get(type);
+        if (!TextUtils.isEmpty(str)) {
+            return str;
+        }
+        return type;
+    }
+
+    //  ------------------------------- 兼容逻辑 ----------------------
 
 
 }

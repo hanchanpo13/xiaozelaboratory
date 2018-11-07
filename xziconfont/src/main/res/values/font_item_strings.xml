@@ -1,71 +1,9 @@
 <resources>
     
     <string-array name="old_icon">
-        <item>"&#xe6ee;"</item>
-        <item>"&#xe6ef;"</item>
-        <item>"&#xe6f0;"</item>
-        <item>"&#xe6f1;"</item>
-        <item>"&#xe6f2;"</item>
-        <item>"&#xe6f3;"</item>
-        <item>"&#xe6f4;"</item>
-        <item>"&#xe6f5;"</item>
-        <item>"&#xe6f6;"</item>
-        <item>"&#xe6f7;"</item>
-        <item>"&#xe6f8;"</item>
-        <item>"&#xe6f9;"</item>
-        <item>"&#xe6fa;"</item>
-        <item>"&#xe6fb;"</item>
-        <item>"&#xe6fc;"</item>
-        <item>"&#xe6fd;"</item>
-        <item>"&#xe6fe;"</item>
-        <item>"&#xe6ff;"</item>
-        <item>"&#xe700;"</item>
-        <item>"&#xe701;"</item>
-        <item>"&#xe702;"</item>
-        <item>"&#xe703;"</item>
-        <item>"&#xe704;"</item>
-        <item>"&#xe705;"</item>
-        <item>"&#xe706;"</item>
-        <item>"&#xe708;"</item>
-        <item>"&#xe70b;"</item>
-        <item>"&#xe6e8;"</item>
-        <item>"&#xe6e9;"</item>
-        <item>"&#xe6ea;"</item>
-        <item>"&#xe6eb;"</item>
-        <item>"&#xe6ec;"</item>
-        <item>"&#xe6ed;"</item>
-        <item>"&#xe707;"</item>
-        <item>"&#xe709;"</item>
-        <item>"&#xe70a;"</item>
 
-        <!-- 20180926-->
-        <item>"&#xe71f;"</item>
-        <item>"&#xe720;"</item>
-        <item>"&#xe721;"</item>
-        <item>"&#xe722;"</item>
-        <item>"&#xe723;"</item>
-        <item>"&#xe724;"</item>
-        <item>"&#xe725;"</item>
-        <item>"&#xe70c;"</item>
-        <item>"&#xe70d;"</item>
-        <item>"&#xe70f;"</item>
-        <item>"&#xe710;"</item>
-        <item>"&#xe711;"</item>
-        <item>"&#xe712;"</item>
-        <item>"&#xe713;"</item>
-        <item>"&#xe714;"</item>
-        <item>"&#xe715;"</item>
-        <item>"&#xe716;"</item>
-        <item>"&#xe717;"</item>
-        <item>"&#xe718;"</item>
-        <item>"&#xe719;"</item>
-        <item>"&#xe71a;"</item>
-        <item>"&#xe71b;"</item>
-        <item>"&#xe71c;"</item>
-        <item>"&#xe71d;"</item>
-        <item>"&#xe71e;"</item>
-        <item>"&#xe70e;"</item>
-        
+        <!-- 20181105-->
+
     </string-array>
 
    

@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.domian;
+package com.test.xiaozeze.xiaozelaboratory.iconfont;
 
 import android.content.Context;
 
@@ -19,6 +19,7 @@ import java.util.Set;
  * Version: 1.0
  */ // 数据处理
 public class IconFontInfo {
+
 
     public static Map<String, List<IconFontInfo>> types = new HashMap<>();
 
@@ -88,4 +89,6 @@ public class IconFontInfo {
         this.code4Show = code4Show;
         this.code4XML = code4XML;
     }
+
+
 }

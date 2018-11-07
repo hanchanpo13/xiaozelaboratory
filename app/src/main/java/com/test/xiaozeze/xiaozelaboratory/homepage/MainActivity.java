@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.page;
+package com.test.xiaozeze.xiaozelaboratory.homepage;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,8 +10,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.test.xiaozeze.xiaozelaboratory.R;
-import com.test.xiaozeze.xiaozelaboratory.domian.PageInfo;
-import com.test.xiaozeze.xiaozelaboratory.uiBase.XZBaseListAdapter;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 

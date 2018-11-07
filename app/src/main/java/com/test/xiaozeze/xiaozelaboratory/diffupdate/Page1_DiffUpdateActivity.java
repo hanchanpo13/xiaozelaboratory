@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.page;
+package com.test.xiaozeze.xiaozelaboratory.diffupdate;
 
 import android.app.Activity;
 import android.os.AsyncTask;

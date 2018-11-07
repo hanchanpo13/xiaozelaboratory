@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:font_Text="文字左"
-                    app:iconCode="@string/iconf_common_arrowheadTriangle"
+                    app:iconCode="@string/common_arrowheadTriangle"
                     app:text_Orientation="left"/>
 
 
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/icon_font_view"
                     app:font_Text="文字下"
-                    app:iconCode="@string/iconf_common_arrowheadTriangle"
+                    app:iconCode="@string/common_arrowheadTriangle"
                     app:icon_rotation="rotation_90"
                     app:text_Orientation="top"/>
 
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/icon_font_view1"
                     app:font_Text="文字右"
-                    app:iconCode="@string/iconf_common_arrowheadTriangle"
+                    app:iconCode="@string/common_arrowheadTriangle"
                     app:icon_rotation="rotation_180"
                     app:text_Orientation="right"/>
 
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/icon_font_view2"
                     app:font_Text="文字下"
-                    app:iconCode="@string/iconf_common_arrowheadTriangle"
+                    app:iconCode="@string/common_arrowheadTriangle"
                     app:icon_rotation="rotation_-90"
                     app:text_Orientation="bottom"/>
 
@@ -89,7 +89,7 @@
                     android:layout_toRightOf="@id/icon_font_view3"
                     app:font_Text="文字粗"
                     app:font_TextStyle="bold"
-                    app:iconCode="@string/iconf_facility_television"
+                    app:iconCode="@string/facility_television"
                     app:text_Orientation="left"/>
 
                 <com.xiaozeze.xziconfont.XZIconFontView
@@ -99,7 +99,7 @@
                     android:layout_toRightOf="@+id/icon_font_view4"
                     app:font_Text="图标粗"
                     app:iconBold="yes"
-                    app:iconCode="@string/iconf_facility_television"
+                    app:iconCode="@string/facility_television"
                     app:text_Orientation="left"/>
 
             </RelativeLayout>
@@ -111,7 +111,7 @@
                 android:layout_toRightOf="@+id/icon_font_view4"
                 app:font_Text="图标粗"
                 app:iconBold="yes"
-                app:iconCode="@string/iconf_facility_television"
+                app:iconCode="@string/facility_television"
                 app:text_Orientation="left"/>
         </LinearLayout>
 

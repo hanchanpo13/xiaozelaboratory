@@ -1,12 +1,12 @@
-package com.test.xiaozeze.xiaozelaboratory.domian;
+package com.test.xiaozeze.xiaozelaboratory.homepage;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-import com.test.xiaozeze.xiaozelaboratory.page.Page0_IconFontActivity;
-import com.test.xiaozeze.xiaozelaboratory.page.Page1_DiffUpdateActivity;
-import com.test.xiaozeze.xiaozelaboratory.page.Page2_DynamicIconActivity;
+import com.test.xiaozeze.xiaozelaboratory.iconfont.Page0_IconFontActivity;
+import com.test.xiaozeze.xiaozelaboratory.diffupdate.Page1_DiffUpdateActivity;
+import com.test.xiaozeze.xiaozelaboratory.dynamicLaucher.Page2_DynamicIconActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;

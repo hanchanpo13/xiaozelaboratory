@@ -1,4 +1,4 @@
-package com.test.xiaozeze.xiaozelaboratory.page;
+package com.test.xiaozeze.xiaozelaboratory.dynamicLaucher;
 
 import android.app.Activity;
 import android.content.ComponentName;

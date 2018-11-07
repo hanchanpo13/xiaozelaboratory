@@ -1,75 +1,160 @@
 <resources>
     <string name="app_name">XZIconFont</string>
 
-    <!-- iconf_facility -->
-    <string name="iconf_facility_television">&#xe6ee;</string>  <!-- 电视 -->
-    <string name="iconf_facility_pet">&#xe6ef;</string>  <!-- 宠物 -->
-    <string name="iconf_facility_singleGuard">&#xe6f0;</string>  <!-- 独卫 -->
-    <string name="iconf_facility_smoking">&#xe6f1;</string>  <!-- 抽烟 -->
-    <string name="iconf_facility_elevator">&#xe6f2;</string>  <!-- 电梯 -->
-    <string name="iconf_facility_refrigerator">&#xe6f3;</string>  <!-- 冰箱 -->
-    <string name="iconf_facility_party">&#xe6f4;</string>  <!-- 聚会 -->
-    <string name="iconf_facility_airConditioner">&#xe6f5;</string>  <!-- 空调 -->
-    <string name="iconf_facility_towel">&#xe6f6;</string>  <!-- 毛巾 -->
-    <string name="iconf_facility_hotShower">&#xe6f7;</string>  <!-- 热水淋浴 -->
-    <string name="iconf_facility_suitableForDisabledPersons">&#xe6f8;</string>  <!-- 适合残疾人 -->
-    <string name="iconf_facility_entranceGuard">&#xe6f9;</string>  <!-- 门禁 -->
-    <string name="iconf_facility_heating">&#xe6fa;</string>  <!-- 暖气 -->
-    <string name="iconf_facility_suitableForChildren">&#xe6fb;</string>  <!-- 适合儿童 -->
-    <string name="iconf_facility_suitableForTheElderly">&#xe6fc;</string>  <!-- 适合老人 -->
-    <string name="iconf_facility_parkingSpace">&#xe6fd;</string>  <!-- 停车位 -->
-    <string name="iconf_facility_toiletPaper">&#xe6fe;</string>  <!-- 手纸 -->
-    <string name="iconf_facility_slipper">&#xe6ff;</string>  <!-- 拖鞋 -->
-    <string name="iconf_facility_washingMachine">&#xe700;</string>  <!-- 洗衣机 -->
-    <string name="iconf_facility_wirelessNetwork">&#xe701;</string>  <!-- 无线网络 -->
-    <string name="iconf_facility_drinkingWaterEquipment">&#xe702;</string>  <!-- 饮水设备 -->
-    <string name="iconf_facility_toothbrush">&#xe703;</string>  <!-- 牙刷 -->
-    <string name="iconf_facility_soap">&#xe704;</string>  <!-- 香皂 -->
-    <string name="iconf_facility_wiredNetwork">&#xe705;</string>  <!-- 有线网络 -->
-    <string name="iconf_facility_bathtub">&#xe706;</string>  <!-- 浴缸 -->
-    <string name="iconf_facility_cook">&#xe708;</string>  <!-- 做饭 -->
-    <string name="iconf_facility_bathShampoo">&#xe70b;</string>  <!-- 浴液洗发水 -->
+    <!-- common -->
+    <string name="common_waitFor">&#xe72b;</string>	<!-- 等待 -->
+    <string name="common_noChoice">&#xe72c;</string>	<!-- 不可选择 -->
+    <string name="common_unselectedSingleElection">&#xe72d;</string>	<!-- 单选未选中 -->
+    <string name="common_singleElection">&#xe72e;</string>	<!-- 单选选中 -->
+    <string name="common_telephone">&#xe72f;</string>	<!-- 电话 -->
+    <string name="common_pairNumber">&#xe730;</string>	<!-- 对号 -->
+    <string name="common_multipleSelectionUnchecked">&#xe731;</string>	<!-- 多选未选中 -->
+    <string name="common_depositRatio">&#xe732;</string>	<!-- 订金比例 -->
+    <string name="common_order">&#xe733;</string>	<!-- 订单 -->
+    <string name="common_multipleSelection">&#xe734;</string>	<!-- 多选选中 -->
+    <string name="common_landlordPage">&#xe735;</string>	<!-- 房东专页 -->
+    <string name="common_housingResources">&#xe736;</string>	<!-- 房源 -->
+    <string name="common_closeLinear">&#xe737;</string>	<!-- 关闭线性 -->
+    <string name="common_personalData">&#xe738;</string>	<!-- 个人资料 -->
+    <string name="common_multipleChoice2">&#xe739;</string>	<!-- 多选选中2 -->
+    <string name="common_closeTheRing">&#xe73a;</string>	<!-- 关闭圆环 -->
+    <string name="common_redEnvelopes">&#xe73b;</string>	<!-- 红包 -->
+    <string name="common_reduce">&#xe73c;</string>	<!-- 减少 -->
+    <string name="common_turnOffTheCircle">&#xe73d;</string>	<!-- 关闭圆形 -->
+    <string name="common_reduce2">&#xe73e;</string>	<!-- 减少2 -->
+    <string name="common_arrowheadTriangle">&#xe73f;</string>	<!-- 箭头三角 -->
+    <string name="common_prohibit">&#xe740;</string>	<!-- 禁止 -->
+    <string name="common_arrowheadCircle">&#xe741;</string>	<!-- 箭头圆形 -->
+    <string name="common_arrowheadLinearity">&#xe742;</string>	<!-- 箭头线性 -->
+    <string name="common_passwordSetting">&#xe743;</string>	<!-- 密码设置 -->
+    <string name="common_female">&#xe744;</string>	<!-- 女 -->
+    <string name="common_male">&#xe745;</string>	<!-- 男 -->
+    <string name="common_diary">&#xe746;</string>	<!-- 日记 -->
+    <string name="common_calendarSelection">&#xe747;</string>	<!-- 日历选择 -->
+    <string name="common_calendar">&#xe748;</string>	<!-- 日历 -->
+    <string name="common_tips">&#xe749;</string>	<!-- 提示 -->
+    <string name="common_scanning">&#xe74a;</string>	<!-- 扫描 -->
+    <string name="common_time">&#xe74b;</string>	<!-- 时间 -->
+    <string name="common_hint2">&#xe74c;</string>	<!-- 提示2 -->
+    <string name="common_complete">&#xe74d;</string>	<!-- 完成 -->
+    <string name="common_notice">&#xe74e;</string>	<!-- 通知 -->
+    <string name="common_news">&#xe74f;</string>	<!-- 消息 -->
+    <string name="common_smilingFace">&#xe750;</string>	<!-- 笑脸 -->
+    <string name="common_circularSelection">&#xe751;</string>	<!-- 圆形选择 -->
+    <string name="common_increase">&#xe752;</string>	<!-- 增加 -->
+    <string name="common_mailbox">&#xe753;</string>	<!-- 邮箱 -->
+    <string name="common_increaseBy2">&#xe754;</string>	<!-- 增加2 -->
+    <string name="common_more">&#xe76e;</string>	<!-- 更多 -->
+    <string name="common_invisible">&#xe76f;</string>	<!-- 不可见 -->
+    <string name="common_so">&#xe774;</string>	<!-- 可见 -->
+    <string name="common_map">&#xe791;</string>	<!-- 地图 -->
+    <string name="common_calculator">&#xe792;</string>	<!-- 计算器 -->
+    <string name="common_landmark">&#xe793;</string>	<!-- 地标 -->
+    <string name="common_switch">&#xe794;</string>	<!-- 切换 -->
+    <string name="common_search">&#xe795;</string>	<!-- 搜索 -->
+    <string name="common_questionMark">&#xe796;</string>	<!-- 问号 -->
+    <string name="common_shieldedUser">&#xe797;</string>	<!-- 屏蔽用户 -->
+    <string name="common_picture">&#xe798;</string>	<!-- 图片 -->
+    <string name="common_download">&#xe799;</string>	<!-- 下载 -->
+    <string name="common_information">&#xe79a;</string>	<!-- 信息 -->
+    <string name="common_setUp">&#xe79b;</string>	<!-- 设置 -->
+    <string name="common_alreadyCollected">&#xe79c;</string>	<!-- 已收藏 -->
+    <string name="common_bill">&#xe79d;</string>	<!-- 账单 -->
+    <string name="common_receivingAddress">&#xe7bf;</string>	<!-- 收件地址 -->
 
-    <!-- iconf_common -->
-    <string name="iconf_common_arrowheadTriangle">&#xe6e8;</string>  <!-- 箭头三角 -->
-    <string name="iconf_common_closeLinear">&#xe6e9;</string>  <!-- 关闭线性 -->
-    <string name="iconf_common_closeTheRing">&#xe6ea;</string>  <!-- 关闭圆环 -->
-    <string name="iconf_common_arrowheadCircle">&#xe6eb;</string>  <!-- 箭头圆形 -->
-    <string name="iconf_common_turnOffTheCircle">&#xe6ec;</string>  <!-- 关闭圆形 -->
-    <string name="iconf_common_arrowheadLinearity">&#xe6ed;</string>  <!-- 箭头线性 -->
 
-    <string name="iconf_common_multipleSelectionUnchecked">&#xe71f;</string>  <!-- 多选未选中 -->
-    <string name="iconf_common_unselectedSingleElection">&#xe720;</string>  <!-- 单选未选中 -->
-    <string name="iconf_common_singleElection">&#xe721;</string>  <!-- 单选选中 -->
-    <string name="iconf_common_reduce">&#xe722;</string>  <!-- 减少 -->
-    <string name="iconf_common_circularSelection">&#xe723;</string>  <!-- 圆形选择 -->
-    <string name="iconf_common_multipleSelection">&#xe724;</string>  <!-- 多选选中 -->
-    <string name="iconf_common_increase">&#xe725;</string>  <!-- 增加 -->
+    <!-- scre -->
+    <string name="scre_nearby">&#xe783;</string>	<!-- 附近 -->
+    <string name="scre_collegesAndUniversities">&#xe784;</string>	<!-- 高校 -->
+    <string name="scre_scenicSpot">&#xe785;</string>	<!-- 景点 -->
+    <string name="scre_airport">&#xe786;</string>	<!-- 机场 -->
+    <string name="scre_hot">&#xe787;</string>	<!-- 热门 -->
+    <string name="scre_tradingArea">&#xe788;</string>	<!-- 商圈 -->
+    <string name="scre_administrativeDivision">&#xe789;</string>	<!-- 行政区域 -->
+    <string name="scre_hospital">&#xe78b;</string>	<!-- 医院 -->
+    <string name="scre_metro">&#xe7b4;</string>	<!-- 地铁 -->
 
-    <!-- iconf_type -->
-    <string name="iconf_type_aSingleRoom">&#xe707;</string>  <!-- 单间 -->
-    <string name="iconf_type_holdTogether">&#xe709;</string>  <!-- 合住 -->
-    <string name="iconf_type_aCompleteSet">&#xe70a;</string>  <!-- 整套 -->
-    
-    <!-- iconf_my -->
-    <string name="iconf_my_comment">&#xe70c;</string>  <!-- 点评 -->
-    <string name="iconf_my_frequentCheckInPeople">&#xe70d;</string>  <!-- 常用入住人 -->
-    <string name="iconf_my_invoice">&#xe70f;</string>  <!-- 发票 -->
-    <string name="iconf_my_theWayOfWaitingForGuests">&#xe710;</string>  <!-- 待客之道 -->
-    <string name="iconf_my_toot">&#xe711;</string>  <!-- 嘟币 -->
-    <string name="iconf_my_integral">&#xe712;</string>  <!-- 积分 -->
-    <string name="iconf_my_shareConcessions">&#xe713;</string>  <!-- 分享优惠 -->
-    <string name="iconf_my_settlementSystem">&#xe714;</string>  <!-- 结算系统 -->
-    <string name="iconf_my_collection">&#xe715;</string>  <!-- 收藏 -->
-    <string name="iconf_my_shoppingMall">&#xe716;</string>  <!-- 商城 -->
-    <string name="iconf_my_softWear">&#xe717;</string>  <!-- 软装 -->
-    <string name="iconf_my_contactCustomerService">&#xe718;</string>  <!-- 联系客服 -->
-    <string name="iconf_my_receivingAddress">&#xe719;</string>  <!-- 收件地址 -->
-    <string name="iconf_my_receivablesSetting">&#xe71a;</string>  <!-- 收款设置 -->
-    <string name="iconf_my_speedBookingManagement">&#xe71b;</string>  <!-- 速订管理 -->
-    <string name="iconf_my_sesameCredit">&#xe71c;</string>  <!-- 芝麻信用 -->
-    <string name="iconf_my_piggyHousekeeper">&#xe71d;</string>  <!-- 小猪管家 -->
-    <string name="iconf_my_intelligentDoorLock">&#xe71e;</string>  <!-- 智能门锁 -->
-    <string name="iconf_my_cashCoupon">&#xe70e;</string>  <!-- 代金券 -->
-    
+
+    <!-- labe -->
+    <string name="labe_reappearance">&#xe79e;</string>	<!-- 返现 -->
+    <string name="labe_superNewHouse">&#xe79f;</string>	<!-- 超棒新房 -->
+    <string name="labe_seaViewMansion">&#xe7a0;</string>	<!-- 海景豪宅 -->
+    <string name="labe_nearTheSubway">&#xe7a1;</string>	<!-- 临近地铁 -->
+    <string name="labe_shoppingConvenience">&#xe7a2;</string>	<!-- 购物便利 -->
+    <string name="labe_flowerChanting">&#xe7a3;</string>	<!-- 花呗 -->
+    <string name="labe_evaluate">&#xe7a4;</string>	<!-- 评价 -->
+    <string name="labe_realBeat">&#xe7a5;</string>	<!-- 实拍 -->
+    <string name="labe_businessTravelCertification">&#xe7a6;</string>	<!-- 商旅认证 -->
+    <string name="labe_privateVilla">&#xe7a7;</string>	<!-- 私家别墅 -->
+    <string name="labe_cancellationOfRisk">&#xe7a8;</string>	<!-- 取消险 -->
+    <string name="labe_depositFreeDeposit">&#xe7a9;</string>	<!-- 免押金 -->
+    <string name="labe_speedBooking">&#xe7aa;</string>	<!-- 速订 -->
+    <string name="labe_firstStayAndPay">&#xe7ab;</string>	<!-- 先住后付 -->
+    <string name="labe_trueTruth">&#xe7ac;</string>	<!-- 验真 -->
+    <string name="labe_ruralBeautyLodge">&#xe7ad;</string>	<!-- 乡村美宿 -->
+    <string name="labe_superiorProduct">&#xe7ae;</string>	<!-- 优品 -->
+    <string name="labe_specialOffer">&#xe7af;</string>	<!-- 特价 -->
+    <string name="labe_longRentPreference">&#xe7b0;</string>	<!-- 长租优惠 -->
+    <string name="labe_preSale">&#xe7b1;</string>	<!-- 预售 -->
+    <string name="labe_intelligentDoorLock">&#xe7b2;</string>	<!-- 智能门锁 -->
+    <string name="labe_chineseLandlord">&#xe7b3;</string>	<!-- 中文房东 -->
+
+
+    <!-- my -->
+    <string name="my_cashCoupon">&#xe770;</string>	<!-- 代金券 -->
+    <string name="my_theWayOfWaitingForGuests">&#xe771;</string>	<!-- 待客之道 -->
+    <string name="my_comment">&#xe772;</string>	<!-- 点评 -->
+    <string name="my_toot">&#xe773;</string>	<!-- 嘟币 -->
+    <string name="my_shareConcessions">&#xe775;</string>	<!-- 分享优惠 -->
+    <string name="my_invoice">&#xe776;</string>	<!-- 发票 -->
+    <string name="my_integral">&#xe777;</string>	<!-- 积分 -->
+    <string name="my_settlementSystem">&#xe778;</string>	<!-- 结算系统 -->
+    <string name="my_contactCustomerService">&#xe779;</string>	<!-- 联系客服 -->
+    <string name="my_collection">&#xe77b;</string>	<!-- 收藏 -->
+    <string name="my_softWear">&#xe77c;</string>	<!-- 软装 -->
+    <string name="my_receivablesSetting">&#xe77d;</string>	<!-- 收款设置 -->
+    <string name="my_speedBookingManagement">&#xe77e;</string>	<!-- 速订管理 -->
+    <string name="my_intelligentDoorLock">&#xe77f;</string>	<!-- 智能门锁 -->
+    <string name="my_piggyHousekeeper">&#xe781;</string>	<!-- 小猪管家 -->
+    <string name="my_sesameCredit">&#xe782;</string>	<!-- 芝麻信用 -->
+    <string name="my_shot">&#xe7be;</string>	<!-- 拍摄 -->
+
+
+    <!-- type -->
+    <string name="type_aSingleRoom">&#xe78a;</string>	<!-- 单间 -->
+    <string name="type_holdTogether">&#xe78c;</string>	<!-- 合住 -->
+    <string name="type_aCompleteSet">&#xe78d;</string>	<!-- 整套 -->
+    <string name="type_numberOfPeople">&#xe78e;</string>	<!-- 人数 -->
+
+
+    <!-- facility -->
+    <string name="facility_pet">&#xe755;</string>	<!-- 宠物 -->
+    <string name="facility_refrigerator">&#xe756;</string>	<!-- 冰箱 -->
+    <string name="facility_television">&#xe757;</string>	<!-- 电视 -->
+    <string name="facility_smoking">&#xe758;</string>	<!-- 抽烟 -->
+    <string name="facility_singleGuard">&#xe759;</string>	<!-- 独卫 -->
+    <string name="facility_party">&#xe75a;</string>	<!-- 聚会 -->
+    <string name="facility_elevator">&#xe75b;</string>	<!-- 电梯 -->
+    <string name="facility_airConditioner">&#xe75c;</string>	<!-- 空调 -->
+    <string name="facility_towel">&#xe75d;</string>	<!-- 毛巾 -->
+    <string name="facility_entranceGuard">&#xe75e;</string>	<!-- 门禁 -->
+    <string name="facility_hotShower">&#xe75f;</string>	<!-- 热水淋浴 -->
+    <string name="facility_suitableForDisabledPersons">&#xe760;</string>	<!-- 适合残疾人 -->
+    <string name="facility_heating">&#xe761;</string>	<!-- 暖气 -->
+    <string name="facility_parkingSpace">&#xe762;</string>	<!-- 停车位 -->
+    <string name="facility_toiletPaper">&#xe763;</string>	<!-- 手纸 -->
+    <string name="facility_wirelessNetwork">&#xe764;</string>	<!-- 无线网络 -->
+    <string name="facility_washingMachine">&#xe765;</string>	<!-- 洗衣机 -->
+    <string name="facility_slipper">&#xe766;</string>	<!-- 拖鞋 -->
+    <string name="facility_suitableForTheElderly">&#xe767;</string>	<!-- 适合老人 -->
+    <string name="facility_drinkingWaterEquipment">&#xe768;</string>	<!-- 饮水设备 -->
+    <string name="facility_wiredNetwork">&#xe769;</string>	<!-- 有线网络 -->
+    <string name="facility_bathtub">&#xe76a;</string>	<!-- 浴缸 -->
+    <string name="facility_toothbrush">&#xe76b;</string>	<!-- 牙刷 -->
+    <string name="facility_cook">&#xe76c;</string>	<!-- 做饭 -->
+    <string name="facility_bathShampoo">&#xe76d;</string>	<!-- 浴液洗发水 -->
+    <string name="facility_suitableForChildren">&#xe78f;</string>	<!-- 适合儿童 -->
+    <string name="facility_soap">&#xe790;</string>	<!-- 香皂 -->
+
+
 </resources>
