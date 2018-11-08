@@ -348,10 +348,6 @@ public class XZIconFontView extends RelativeLayout {
         private int textPadding;
 
 
-        public void setOrientation(int orientation) {
-            this.orientation = orientation;
-        }
-
 
         public void setText(CharSequence text) {
             mText = text;
