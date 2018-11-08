@@ -14,9 +14,10 @@ import org.aspectj.lang.annotation.Pointcut;
 
 
 /**
- * Created by baixiaokang
- * 通过CheckLogin注解检查用户是否登陆注解，通过aop切片的方式在编译期间织入源代码中
- * 功能：检查用户是否登陆，未登录则提示登录，不会执行下面的逻辑
+ * Description: 登录检测
+ * Author: fengzeyuan
+ * Date: 2018/11/8 下午6:56
+ * Version: 1.0
  */
 @Aspect
 public class CheckLoginAspect {

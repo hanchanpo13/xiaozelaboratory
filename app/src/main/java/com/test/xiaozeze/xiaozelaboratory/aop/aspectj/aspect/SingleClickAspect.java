@@ -12,12 +12,13 @@ import org.aspectj.lang.annotation.Pointcut;
 
 import java.util.Calendar;
 
+
 /**
- * Created by baixiaokang on 16/12/9.
- * 防止View被连续点击,间隔时间600ms
+ * Description: 防止点击抖动
+ * Author: fengzeyuan
+ * Date: 2018/11/8 下午6:56
+ * Version: 1.0
  */
-
-
 @Aspect
 public class SingleClickAspect {
     static int TIME_TAG = R.id.click_time;
