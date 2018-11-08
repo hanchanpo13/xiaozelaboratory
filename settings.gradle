@@ -1,4 +1,7 @@
-include ':app', 
+include ':app', ':buildSrc', 
         ':mylibs:xziconfont', 
         ':mylibs:appdiffupdate', 
-        ':mylibs:aoplib'
+        ':mylibs:aoplib',
+        ':mylibs:xzlog',
+        ':mylibs:permissionchecker'
+
