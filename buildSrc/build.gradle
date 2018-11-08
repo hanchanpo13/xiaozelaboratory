@@ -1,0 +1,17 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation gradleApi()//gradle sdk
+    implementation localGroovy()//groovy sdk
+    implementation 'org.aspectj:aspectjtools:1.8.13'
+}
+
+repositories {
+    jcenter()
+    maven {
+        url 'https://maven.google.com'
+    }
+}
+
+//注意⚠️:   插件修改后运行前需要重新发布: ./gradlew -p plugin clean build uploadArchives --info
