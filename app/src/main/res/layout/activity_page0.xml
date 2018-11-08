@@ -90,6 +90,7 @@
                     app:font_Text="文字粗"
                     app:font_TextStyle="bold"
                     app:iconCode="@string/facility_television"
+                    app:iconColor="#ff4081"
                     app:text_Orientation="left"/>
 
                 <com.xiaozeze.xziconfont.XZIconFontView
@@ -100,6 +101,7 @@
                     app:font_Text="图标粗"
                     app:iconBold="yes"
                     app:iconCode="@string/facility_television"
+                    app:font_TextColor="#ff4081"
                     app:text_Orientation="left"/>
 
             </RelativeLayout>

@@ -51,7 +51,8 @@ abstract public class XZBaseListAdapter<D> extends BaseAdapter {
         if (convertView == null) {
             convertView = getHolder(position, parent).getConvertView();
         }
-        holder = (XZBaseListViewHolder) convertView.getTag(R.string.tag_key);
+        Object tag = convertView.getTag(R.string.tag_key);
+        holder = (XZBaseListViewHolder) tag;
         holder.setItemData(position);
         return convertView;
     }

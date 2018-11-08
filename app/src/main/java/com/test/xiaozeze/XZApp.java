@@ -1,8 +1,12 @@
 package com.test.xiaozeze;
 
+import android.app.Activity;
 import android.app.Application;
+import android.os.Bundle;
 
 import com.test.xiaozeze.utils.Utils;
+
+import java.util.Stack;
 
 /**
  * Description:
@@ -12,6 +16,7 @@ import com.test.xiaozeze.utils.Utils;
  */
 public class XZApp extends Application {
     private static XZApp mInstance;
+    public Stack<Activity> store;
 
     public static XZApp getInstance() {
         return mInstance;
@@ -22,5 +27,54 @@ public class XZApp extends Application {
         super.onCreate();
         mInstance = this;
         Utils.init(this);
+        store = new Stack<>();
+        registerActivityLifecycleCallbacks(new SwitchBackgroundCallbacks());
+    }
+
+    private class SwitchBackgroundCallbacks implements Application.ActivityLifecycleCallbacks {
+
+        @Override
+        public void onActivityCreated(Activity activity, Bundle bundle) {
+            store.add(activity);
+        }
+
+        @Override
+        public void onActivityStarted(Activity activity) {
+
+        }
+
+        @Override
+        public void onActivityResumed(Activity activity) {
+
+        }
+
+        @Override
+        public void onActivityPaused(Activity activity) {
+
+        }
+
+        @Override
+        public void onActivityStopped(Activity activity) {
+
+        }
+
+        @Override
+        public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+
+        }
+
+        @Override
+        public void onActivityDestroyed(Activity activity) {
+            store.remove(activity);
+        }
+    }
+
+    /**
+     * 获取当前的Activity
+     *
+     * @return
+     */
+    public Activity getCurActivity() {
+        return store.lastElement();
     }
 }

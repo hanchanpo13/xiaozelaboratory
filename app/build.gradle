@@ -1,16 +1,17 @@
-apply plugin: 'com.android.application'
+import com.xiaozeze.mypluign.aop.AspectjPlugin
 
+apply plugin: 'com.android.application'
+apply plugin: AspectjPlugin
 android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.test.xiaozeze.xiaozelaboratory"
         minSdkVersion 14
-        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    
+
     buildTypes {
         release {
             minifyEnabled true
@@ -33,15 +34,24 @@ android {
 
 dependencies {
     
-    implementation project(':mylibs:xziconfont')
-    implementation project(':mylibs:appdiffupdate')
-
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
 
+    // 实验项目
+    implementation project(':mylibs:xziconfont')
+    implementation project(':mylibs:appdiffupdate')
+    implementation project(':mylibs:aoplib')
+    
+    // 官方支持库
+    implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+
+    // 三方支持库
     implementation 'org.jsoup:jsoup:1.9.2'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+
