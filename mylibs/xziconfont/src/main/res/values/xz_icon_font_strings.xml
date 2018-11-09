@@ -61,6 +61,85 @@
     <string name="common_alreadyCollected">&#xe79c;</string>	<!-- 已收藏 -->
     <string name="common_bill">&#xe79d;</string>	<!-- 账单 -->
     <string name="common_receivingAddress">&#xe7bf;</string>	<!-- 收件地址 -->
+    <string name="common_mobilePhone">&#xe7f2;</string>	<!-- 手机 -->
+    <string name="common_longArrowhead">&#xe7f3;</string>	<!-- 长箭头 -->
+    <string name="common_pigletS">&#xe7f4;</string>	<!-- 小猪S -->
+    <string name="common_coupon">&#xe7f5;</string>	<!-- 优惠券 -->
+    <string name="common_shoppingCart">&#xe7f8;</string>	<!-- 购物车 -->
+    <string name="common_menu">&#xe807;</string>	<!-- 菜单 -->
+    <string name="common_location">&#xe808;</string>	<!-- 定位 -->
+
+
+    <!-- city -->
+    <string name="city_paris">&#xe7c0;</string>	<!-- 巴黎 -->
+    <string name="city_auckland">&#xe7c1;</string>	<!-- 奥克兰 -->
+    <string name="city_chengdu">&#xe7c2;</string>	<!-- 成都 -->
+    <string name="city_beijing">&#xe7c3;</string>	<!-- 北京 -->
+    <string name="city_bali">&#xe7c4;</string>	<!-- 巴厘岛 -->
+    <string name="city_chongqing">&#xe7c5;</string>	<!-- 重庆 -->
+    <string name="city_pattaya">&#xe7c6;</string>	<!-- 芭提雅 -->
+    <string name="city_osaka">&#xe7c7;</string>	<!-- 大阪 -->
+    <string name="city_tokyo">&#xe7c8;</string>	<!-- 东京 -->
+    <string name="city_dalian">&#xe7c9;</string>	<!-- 大连 -->
+    <string name="city_guangzhou">&#xe7ca;</string>	<!-- 广州 -->
+    <string name="city_guilin">&#xe7cb;</string>	<!-- 桂林 -->
+    <string name="city_dali">&#xe7cc;</string>	<!-- 大理 -->
+    <string name="city_hangzhou">&#xe7cd;</string>	<!-- 杭州 -->
+    <string name="city_kualaLumpur">&#xe7ce;</string>	<!-- 吉隆坡 -->
+    <string name="city_harbin">&#xe7cf;</string>	<!-- 哈尔滨 -->
+    <string name="city_hoChiMingCity">&#xe7d0;</string>	<!-- 胡志明市 -->
+    <string name="city_ji_nan">&#xe7d1;</string>	<!-- 济南 -->
+    <string name="city_chejudo">&#xe7d2;</string>	<!-- 济州岛 -->
+    <string name="city_kyoto">&#xe7d3;</string>	<!-- 京都 -->
+    <string name="city_lijiang">&#xe7d4;</string>	<!-- 丽江 -->
+    <string name="city_kunming">&#xe7d5;</string>	<!-- 昆明 -->
+    <string name="city_losAngeles">&#xe7d6;</string>	<!-- 洛杉矶 -->
+    <string name="city_bangkok">&#xe7d7;</string>	<!-- 曼谷 -->
+    <string name="city_melbourne">&#xe7d8;</string>	<!-- 墨尔本 -->
+    <string name="city_nanjing">&#xe7d9;</string>	<!-- 南京 -->
+    <string name="city_phuket">&#xe7da;</string>	<!-- 普吉岛 -->
+    <string name="city_qinghuangdao">&#xe7db;</string>	<!-- 秦皇岛 -->
+    <string name="city_qingdao">&#xe7dc;</string>	<!-- 青岛 -->
+    <string name="city_sanya">&#xe7dd;</string>	<!-- 三亚 -->
+    <string name="city_qinghai">&#xe7de;</string>	<!-- 青海 -->
+    <string name="city_newYork">&#xe7df;</string>	<!-- 纽约 -->
+    <string name="city_xiamen">&#xe7e0;</string>	<!-- 厦门 -->
+    <string name="city_chiangMai">&#xe7e1;</string>	<!-- 清迈 -->
+    <string name="city_shenzhen">&#xe7e2;</string>	<!-- 深圳 -->
+    <string name="city_shanghai">&#xe7e3;</string>	<!-- 上海 -->
+    <string name="city_seoul">&#xe7e4;</string>	<!-- 首尔 -->
+    <string name="city_suzhou">&#xe7e5;</string>	<!-- 苏州 -->
+    <string name="city_kohSamui">&#xe7e6;</string>	<!-- 苏梅岛 -->
+    <string name="city_wuhan">&#xe7e7;</string>	<!-- 武汉 -->
+    <string name="city_tianjin">&#xe7e8;</string>	<!-- 天津 -->
+    <string name="city_xian">&#xe7e9;</string>	<!-- 西安 -->
+    <string name="city_sydney">&#xe7ea;</string>	<!-- 悉尼 -->
+    <string name="city_kotaKinabalu">&#xe7eb;</string>	<!-- 亚庇 -->
+    <string name="city_hongKong">&#xe7ec;</string>	<!-- 香港 -->
+    <string name="city_changsha">&#xe7ed;</string>	<!-- 长沙 -->
+    <string name="city_yangzhou">&#xe7ee;</string>	<!-- 扬州 -->
+    <string name="city_zhengzhou">&#xe7ef;</string>	<!-- 郑州 -->
+    <string name="city_singapore">&#xe7f0;</string>	<!-- 新加坡 -->
+    <string name="city_zhuhai">&#xe7f1;</string>	<!-- 珠海 -->
+
+
+    <!-- navi -->
+    <string name="navi_housingSourceNotSelected">&#xe7f6;</string>	<!-- 房源未选中 -->
+    <string name="navi_orderSelection">&#xe7f7;</string>	<!-- 订单选中 -->
+    <string name="navi_orderNotSelected">&#xe7f9;</string>	<!-- 订单未选中 -->
+    <string name="navi_undetected">&#xe7fa;</string>	<!-- 发现未选中 -->
+    <string name="navi_findTheChoice">&#xe7fb;</string>	<!-- 发现选中 -->
+    <string name="navi_houseSelection">&#xe7fc;</string>	<!-- 房源选中 -->
+    <string name="navi_serviceSelection">&#xe7fd;</string>	<!-- 服务选中 -->
+    <string name="navi_serviceNotSelected">&#xe7fe;</string>	<!-- 服务未选中 -->
+    <string name="navi_collectionNotSelected">&#xe7ff;</string>	<!-- 收藏未选中 -->
+    <string name="navi_collectionAndSelection">&#xe800;</string>	<!-- 收藏选中 -->
+    <string name="navi_iDidNotChoose">&#xe801;</string>	<!-- 我未选中 -->
+    <string name="navi_iSelected">&#xe802;</string>	<!-- 我选中 -->
+    <string name="navi_messageNotSelected">&#xe803;</string>	<!-- 消息未选中 -->
+    <string name="navi_messageSelection">&#xe804;</string>	<!-- 消息选中 -->
+    <string name="navi_register">&#xe805;</string>	<!-- 注册 -->
+    <string name="navi_signIn">&#xe806;</string>	<!-- 登录 -->
 
 
     <!-- scre -->
@@ -155,6 +234,5 @@
     <string name="facility_bathShampoo">&#xe76d;</string>	<!-- 浴液洗发水 -->
     <string name="facility_suitableForChildren">&#xe78f;</string>	<!-- 适合儿童 -->
     <string name="facility_soap">&#xe790;</string>	<!-- 香皂 -->
-
 
 </resources>
