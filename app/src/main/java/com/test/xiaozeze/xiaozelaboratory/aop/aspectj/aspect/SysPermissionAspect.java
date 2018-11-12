@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 
 import com.test.xiaozeze.XZApp;
-import com.test.xiaozeze.annotation.aspect.Permission;
+import com.xiaozeze.annotation.aspect.Permission;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
