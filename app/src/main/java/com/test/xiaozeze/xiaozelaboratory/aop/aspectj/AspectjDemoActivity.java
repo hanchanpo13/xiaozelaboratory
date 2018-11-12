@@ -1,12 +1,12 @@
 package com.test.xiaozeze.xiaozelaboratory.aop.aspectj;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -23,7 +23,7 @@ import java.util.List;
  * @Date: 18/1/30 上午1:00
  * @Version: 1.0
  */
-public class AspectjDemoActivity extends Activity implements View.OnClickListener {
+public class AspectjDemoActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
