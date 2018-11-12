@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+   alpha  16进制
+   0.05    0d
+   0.1		19
+   0.2		33
+   0.3		4C
+   0.4		66
+   0.5		7F
+   0.6		99
+   0.7		B2
+   0.8		CC
+   0.85    D9
+   0.9		E5
+   0.95    F3
+   -->
+
+    <!--000000-->
+    <color name="xz_00000000">#00000000</color>
+    <color name="xz_05000000">#0d000000</color>
+    <color name="xz_11000000">#11000000</color>
+    <color name="xz_10000000">#19000000</color>
+    <color name="xz_20000000">#33000000</color>
+    <color name="xz_30000000">#4c000000</color>
+    <color name="xz_40000000">#66000000</color>
+    <color name="xz_50000000">#7f000000</color>
+    <color name="xz_70000000">#b2000000</color>
+    <color name="xz_80000000">#cc000000</color>
+    <color name="xz_85000000">#d9000000</color>
+    <color name="xz_000000">#000000</color>
+
+
+    <color name="xz_ffffff">#ffffff</color>
+    <color name="xz_e0e0e0">#e0e0e0</color>
+    <color name="xz_bdbdbd">#bdbdbd</color>
+    <color name="xz_212121">#212121</color>
+    <color name="xz_0f0f0f">#0f0f0f</color>
+
+
+    <!--渐变色-->
+    <!--结果页价格标签-->
+    <!--结果页推荐操作背景渐变-->
+
+    <color name="xz_05ff4081">#0dff4081</color>
+    <color name="xz_10ff4081">#19ff4081</color>
+    <color name="xz_20ff4081">#33ff4081</color>
+    <color name="xz_50ff4081">#79ff4081</color>
+    <color name="xz_80ff4081">#c8ff4081</color>
+    <color name="xz_ff4081">#ff4081</color>
+    
+    <color name="xz_791d3c">#791D3C</color>
+    <color name="xz_c02e5f">#C02E5F</color>
+    <color name="xz_ff3b80">#ff3b80</color>
+    <color name="xz_ff2969">#ff2969</color>
+
+
+
+
+    <color name="xz_323232">#323232</color>
+    <color name="xz_20757575">#33757575</color>
+    <color name="light_gray">#AA808080</color>
+    <color name="xz_757575">#757575</color>
+    <color name="xz_50f5f5f5">#7ff5f5f5</color>
+    <color name="xz_878787">#878787</color>
+    <color name="btn_disable">#AAB1B4</color>
+    <color name="xz_e8e8e8">#e8e8e8</color>
+    <color name="xz_d4d7da">#d4d7da</color>
+    <color name="xz_f5f5f5">#f5f5f5</color>
+    <color name="xz_f7f7f7">#f7f7f7</color>
+    <color name="xz_eeeeee">#eeeeee</color>
+    <color name="xz_ffe5ed">#ffe5ed</color>
+    <color name="xz_fad7db">#fad7db</color>
+    <color name="xz_fef6e3">#fef6e3</color>
+    <color name="xz_fdedc7">#fdedc7</color>
+    <color name="xz_fd6e42">#fd6e42</color>
+    <color name="xz_e53974">#e53974</color>
+    <color name="xz_ff95b5">#ff95b5</color>
+    <color name="xz_fc2f6b">#fc2f6b</color>
+    <color name="xz_8f0012">#8f0012</color>
+    <color name="xz_1aff4081">#1aff4081</color>
+    <color name="xz_058f0012">#0d8f0012</color>
+    <color name="xz_03ff4081">#08ff4081</color>
+
+    <color name="xz_00796d">#00796d</color>
+    <color name="xz_1c8e83">#1c8e83</color>
+    <color name="xz_26a69a">#26a69a</color>
+    <color name="xz_0199af">#0199af</color>
+    <color name="xz_1a9fdb">#1a9fdb</color>
+
+
+</resources>
