@@ -1,2 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.xiaozeze.staginglib"/>
+          package="com.xiaozeze.staginglib"
+    
+    >
+    
+    <application>
+        <!--全局Dialog-->
+        <activity
+            android:name=".support.mycontrol.globleDialog.XZDialogContentActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AndPermissionTheme.Transparent"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden"/>
+    </application>
+</manifest>

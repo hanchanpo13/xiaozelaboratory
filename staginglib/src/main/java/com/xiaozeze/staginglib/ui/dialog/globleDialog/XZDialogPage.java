@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import static com.xiaozeze.staginglib.ui.dialog.globleDialog.XZActivityLifecycleInterface.dialogPageMap;
 
 import com.xiaozeze.staginglib.R;
 
@@ -103,45 +104,11 @@ public class XZDialogPage<T extends Dialog> implements DialogInterface {
      *
      * @return 对应构造器
      */
-    public AlertDialogBuilder getAlertDialogBuilder() {
-        AlertDialogBuilder alertDialogBuilder = new AlertDialogBuilder(this);
-        mDialogBuilder = alertDialogBuilder;
-        return alertDialogBuilder;
+    public void setDialogBuilder(GlobalDialogBuilder<T> dialogBuilder) {
+        mDialogBuilder = dialogBuilder;
     }
 
-    /**
-     * 列表全局提示框构造器
-     *
-     * @return
-     */
-    public ListDialogBuilder getListDialogBuilder() {
-        ListDialogBuilder listDialogBuilder = new ListDialogBuilder(this);
-        mDialogBuilder = listDialogBuilder;
-        return listDialogBuilder;
-    }
-
-
-    /**
-     * 头部图片全局提示框构造器
-     *
-     * @return 对应构造器
-     */
-    public HeadImageAlertDialogBuilder getHeadImageAlertDialogBuilder() {
-        HeadImageAlertDialogBuilder alertDialogBuilder = new HeadImageAlertDialogBuilder(this);
-        mDialogBuilder = alertDialogBuilder;
-        return alertDialogBuilder;
-    }
-
-    /**
-     * 列表全局提示框构造器
-     *
-     * @return 对应构造器
-     */
-    public ProgressDialogBuilder getProgressDialogBuilder() {
-        ProgressDialogBuilder listDialogBuilder = new ProgressDialogBuilder(this);
-        mDialogBuilder = listDialogBuilder;
-        return listDialogBuilder;
-    }
+    
 
     @Override
     public void cancel() {

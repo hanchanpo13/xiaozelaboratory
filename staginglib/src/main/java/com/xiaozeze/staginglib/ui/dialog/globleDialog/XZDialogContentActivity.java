@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import static com.xiaozeze.staginglib.ui.dialog.globleDialog.XZActivityLifecycleInterface.dialogPageMap;
+
 
 /**
  * @Description: 动态权限申请透明activity
