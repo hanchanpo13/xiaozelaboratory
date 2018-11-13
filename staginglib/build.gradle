@@ -29,6 +29,12 @@ dependencies {
     api 'com.android.support:appcompat-v7:27.1.1'
     api 'com.android.support:appcompat-v7:27.1.1'
     
+    // 三方项目
+    api project(':mylibs:appdiffupdate')
+    api project(':mylibs:aoplib')
+    api project(':mylibs:permissionchecker')
+    api project(':mylibs:xzlog')
+    
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
