@@ -1,2 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.test.xiaozeze.permissionchecker"/>
+          package="com.xiaozeze.permissionchecker">
+    <application>
+
+        <!--permission-->
+        <activity
+            android:name=".XZPermissionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AndPermissionTheme.Transparent"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <!--permission-->
+        
+    </application>
+</manifest>
