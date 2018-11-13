@@ -15,6 +15,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface Permission {
+public @interface XZPermissionChecker {
     String[] value();
+    boolean isForce = false;
 }

@@ -21,8 +21,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.test.xiaozeze.permissionchecker.R;
-
 
 /**
  * @Description: 自定义dialog

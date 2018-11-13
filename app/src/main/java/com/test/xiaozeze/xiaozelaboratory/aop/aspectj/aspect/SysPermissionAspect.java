@@ -1,12 +1,16 @@
 package com.test.xiaozeze.xiaozelaboratory.aop.aspectj.aspect;
 
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-
+import android.Manifest;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Process;
+import android.support.annotation.NonNull;
 
 import com.test.xiaozeze.XZApp;
-import com.xiaozeze.annotation.aspect.Permission;
+import com.xiaozeze.annotation.aspect.XZPermissionChecker;
+import com.xiaozeze.permissionchecker.XZPermissionUtils;
+import com.xiaozeze.permissionchecker.listener.PermissionListener;
+import com.xiaozeze.staginglib.utils.ToastUtils;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -22,35 +26,37 @@ import org.aspectj.lang.annotation.Aspect;
 public class SysPermissionAspect {
 
     @Around("execution(@com.app.annotation.aspect.Permission * *(..)) && @annotation(permission)")
-    public void aroundJoinPoint(ProceedingJoinPoint joinPoint, Permission permission) throws Throwable {
-        AppCompatActivity ac = (AppCompatActivity) XZApp.getInstance().getCurActivity();
-        new AlertDialog.Builder(ac)
-                .setTitle("提示")
-                .setMessage("为了应用可以正常使用，请您点击确认申请权限。")
-                .setNegativeButton("取消", null)
-                .setPositiveButton("允许", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-//                        MPermissionUtils.requestPermissionsResult(ac, 1, Manifest.permission.value()
-//                                , new MPermissionUtils.OnPermissionListener() {
-//                                    @Override
-//                                    public void onPermissionGranted() {
-//                                        try {
-//                                            joinPoint.proceed();//获得权限，执行原方法
-//                                        } catch (Throwable e) {
-//                                            e.printStackTrace();
-//                                        }
-//                                    }
-//
-//                                    @Override
-//                                    public void onPermissionDenied() {
-//                                        MPermissionUtils.showTipsDialog(ac);
-//                                    }
-//                                });
-                    }
-                })
-                .create()
-                .show();
+    public void aroundJoinPoint(final ProceedingJoinPoint joinPoint, final XZPermissionChecker checker) throws Throwable {
+        final XZApp app = XZApp.getInstance();
+        XZPermissionUtils.checkPermission(app, checker.value(), new PermissionListener() {
+
+            @Override
+            public void onSucceed(int requestCode, @NonNull String[] grantPermissions) {
+                try {
+                    joinPoint.proceed();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailed(int requestCode, @NonNull String[] deniedPermissions) {
+                if (!checker.isForce) {
+                    String funName = XZPermissionUtils.getPermissionGroupLabelStr(app, Manifest.permission.SYSTEM_ALERT_WINDOW);
+                    ToastUtils.showShort("权限请求失败，您将无法使用" + funName + "功能");
+                } else {
+                    ToastUtils.showLong("权限请求失败，无法正常运行，即将退出");
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            app.exit();
+                            Process.killProcess(Process.myPid());
+                            System.exit(0);
+                        }
+                    }, 3000);
+                }
+            }
+        });
     }
 }
 

@@ -16,7 +16,7 @@ import java.util.Stack;
  */
 public class XZApp extends Application {
     private static XZApp mInstance;
-    public Stack<Activity> store;
+    public Stack<Activity> store = new Stack<>();
 
     public static XZApp getInstance() {
         return mInstance;
@@ -29,6 +29,16 @@ public class XZApp extends Application {
         Utils.init(this);
         store = new Stack<>();
         registerActivityLifecycleCallbacks(new SwitchBackgroundCallbacks());
+    }
+
+    /**
+     * 退出APP
+     */
+    public void exit() {
+        while (store.empty()){
+            Activity ac = store.pop();
+            ac.finish();
+        }
     }
 
     private class SwitchBackgroundCallbacks implements Application.ActivityLifecycleCallbacks {
