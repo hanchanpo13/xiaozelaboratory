@@ -5,7 +5,7 @@ apply plugin: AspectjPlugin
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.xiaozeze.xiaozelaboratory"
+        applicationId "com.xiaozeze.demo.xiaozelaboratory"
         minSdkVersion 14
         versionCode 1
         versionName "1.0"
