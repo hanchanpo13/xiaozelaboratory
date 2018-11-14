@@ -1,4 +1,4 @@
-package com.test.xiaozeze.utils;
+package com.xiaozeze.staginglib.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -35,9 +35,6 @@ import android.text.style.SuperscriptSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
-import android.util.TypedValue;
-
-import com.test.xiaozeze.XZApp;
 
 import static android.graphics.BlurMaskFilter.Blur;
 
@@ -49,9 +46,9 @@ import static android.graphics.BlurMaskFilter.Blur;
  *     desc  : SpannableString相关工具类
  * </pre>
  */
-public final class SpannableStringUtils {
+public final class SpanStrUtils {
 
-    private SpannableStringUtils() {
+    private SpanStrUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
@@ -566,9 +563,9 @@ public final class SpannableStringUtils {
                 if (imageIsBitmap) {
                     ImageSpan imageSpan;
                     if (isGravityVertical) {
-                        imageSpan = new VerticalImageSpan(XZApp.getInstance(), bitmap);
+                        imageSpan = new VerticalImageSpan(XZUtils.getApp(), bitmap);
                     } else {
-                        imageSpan = new ImageSpan(XZApp.getInstance(), bitmap);
+                        imageSpan = new ImageSpan(XZUtils.getApp(), bitmap);
                     }
                     mBuilder.setSpan(imageSpan, start, end, flag);
                     bitmap = null;
@@ -587,9 +584,9 @@ public final class SpannableStringUtils {
                 } else if (imageIsUri) {
                     ImageSpan imageSpan;
                     if (isGravityVertical) {
-                        imageSpan = new VerticalImageSpan(XZApp.getInstance(), uri);
+                        imageSpan = new VerticalImageSpan(XZUtils.getApp(), uri);
                     } else {
-                        imageSpan = new ImageSpan(XZApp.getInstance(), uri);
+                        imageSpan = new ImageSpan(XZUtils.getApp(), uri);
                     }
                     mBuilder.setSpan(imageSpan, start, end, flag);
                     uri = null;
@@ -597,9 +594,9 @@ public final class SpannableStringUtils {
                 } else {
                     ImageSpan imageSpan;
                     if (isGravityVertical) {
-                        imageSpan = new VerticalImageSpan(XZApp.getInstance(), resourceId);
+                        imageSpan = new VerticalImageSpan(XZUtils.getApp(), resourceId);
                     } else {
-                        imageSpan = new ImageSpan(XZApp.getInstance(), resourceId);
+                        imageSpan = new ImageSpan(XZUtils.getApp(), resourceId);
                     }
                     mBuilder.setSpan(imageSpan, start, end, flag);
                     resourceId = 0;
@@ -620,7 +617,7 @@ public final class SpannableStringUtils {
                 isBlur = false;
             }
             if (textSize > 0) {
-                mBuilder.setSpan(new AbsoluteSizeSpan(spToPx(textSize)), start, end, flag);
+                mBuilder.setSpan(new AbsoluteSizeSpan(SizeUtils.sp2px(textSize)), start, end, flag);
             }
             flag = Spanned.SPAN_EXCLUSIVE_EXCLUSIVE;
         }
@@ -741,10 +738,4 @@ public final class SpannableStringUtils {
 
     }
 
-    /**
-     * 将sp值转换为px值，保证文字大小不变
-     */
-    public static int spToPx(float spValue) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spValue, XZApp.getInstance().getResources().getDisplayMetrics());
-    }
 }
